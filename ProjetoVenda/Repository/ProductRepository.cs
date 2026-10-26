@@ -74,7 +74,7 @@ namespace ProjetoVenda.Repository
         public bool excluir(int cod_produto)
         {
             using MySqlConnection connector = DataBase.GetConnection();
-            string sql = @"DELETE FROM produto WHERE cod_produto = @produto";
+            string sql = @"DELETE FROM produto WHERE cod_produto = @cod_produto";
             using MySqlCommand cmd = new MySqlCommand(sql, connector);
             cmd.Parameters.AddWithValue("@cod_produto", cod_produto);
             return cmd.ExecuteNonQuery() > 0;

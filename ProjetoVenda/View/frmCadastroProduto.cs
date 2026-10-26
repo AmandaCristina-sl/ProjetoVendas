@@ -99,6 +99,12 @@ namespace ProjetoVenda.View
                     "ATUALIZAÇÃO DE PRODUTOS",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
+
+                LimparCampos();
+                carregarProdutos();
+                this.btnAtualizar.Enabled = false;
+                this.btnExcluir.Enabled = false;
+                produtoSelecionado = null;
             }
             else
             {
@@ -109,10 +115,6 @@ namespace ProjetoVenda.View
                     );
             }
 
-            LimparCampos();
-            carregarProdutos();
-            this.btnAtualizar.Enabled = false;
-            this.btnExcluir.Enabled = false;
         }
 
         //clicou no botão errado (descartar função)
@@ -137,6 +139,36 @@ namespace ProjetoVenda.View
             this.txtQuantidade.Value = produto.quantidade;
             produtoSelecionado = produto;
             this.btnAtualizar.Enabled = true;
+            this.btnExcluir.Enabled = true;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            bool resp = controller.excluir(produtoSelecionado);
+            if (resp)
+            {
+                MessageBox.Show(
+                    "Produto Excluído com sucesso!",
+                    "EXCLUSÃO DE PRODUTOS",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+
+                LimparCampos();
+                carregarProdutos();
+                this.btnAtualizar.Enabled = false;
+                this.btnExcluir.Enabled = false;
+                produtoSelecionado = null;
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Erro ao Excluir o produto!",
+                    "ERRO NA EXCLUSÃO DE PRODUTOS",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error
+                    );
+            }
+
+
         }
     }
 }
