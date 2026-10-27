@@ -3,6 +3,7 @@ using ProjetoVenda.dataBase;
 using ProjetoVenda.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Text;
 
 namespace ProjetoVenda.Repository
@@ -56,6 +57,31 @@ namespace ProjetoVenda.Repository
             return list;
         }
 
+        public List<Product> listarPorPagina(int qtd, int pagina)
+        {
+            int offset = qtd * (pagina - 1);
+            using MySqlConnection connector = DataBase.GetConnection();
+            string sql = "SELECT * FROM produto LIMIT @limit OFFSET @offset";
+            using MySqlCommand cmd = new MySqlCommand(sql, connector);
+            cmd.Parameters.AddWithValue("@limit", qtd);
+            cmd.Parameters.AddWithValue("@offset", offset);
+            using var reader = cmd.ExecuteReader();
+
+            List<Product> list = new List<Product>();
+            while (reader.Read())
+            {
+                list.Add(map(reader));
+            }
+            return list;
+        }
+
+        public int quantidadeProdutos()
+        {
+            using MySqlConnection connector = DataBase.GetConnection();
+            string sql = "SELECT COUNT(*) FROM produto";
+            using MySqlCommand cmd = new MySqlCommand(sql, connector);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
         public bool atualizar(Product produto)
         {
             using MySqlConnection connector = DataBase.GetConnection();

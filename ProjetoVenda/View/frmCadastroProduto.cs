@@ -16,6 +16,9 @@ namespace ProjetoVenda.View
         private ProductController controller;
         private Product? produtoSelecionado;
 
+        private int totalDePaginas = 5;
+        private int paginaAtual = 1;
+        private int totalPorPagina = 5;
         public frmCadastroProduto()
         {
             InitializeComponent();
@@ -64,14 +67,22 @@ namespace ProjetoVenda.View
         {
             // finalizar a lista de produtos
             carregarProdutos();
+            //int paginas = controller.quantidadePaginas(5);
+            //lblPaginas.Text = $" 1 de {paginas}";
         }
 
         private void carregarProdutos()
         {
-            List<Product> list = controller.getAll();
+            List<Product> list = controller.listarPorPagina(totalPorPagina, paginaAtual);
             dgvProdutos.DataSource = list;
             this.dgvProdutos.Columns["cod_funcionario"].Visible = false;
-
+            
+            totalDePaginas = controller.quantidadePaginas(totalPorPagina);
+            if (paginaAtual > totalDePaginas)
+            {
+                paginaAtual = totalDePaginas;
+            }
+            atualizarLblPaginas();
 
         }
 
@@ -169,6 +180,39 @@ namespace ProjetoVenda.View
             }
 
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //manipular as paginas
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (paginaAtual > 1)
+            {
+                paginaAtual--;
+                atualizarLblPaginas();
+                carregarProdutos();
+            }
+
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            if (paginaAtual < totalDePaginas)
+            {
+                paginaAtual++;
+                atualizarLblPaginas();
+                carregarProdutos();
+            }
+           
+        }
+
+        private void atualizarLblPaginas()
+        {
+            this.lblPaginas.Text = $"Página: {paginaAtual} de {totalDePaginas}";
         }
     }
 }

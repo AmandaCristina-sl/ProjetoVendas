@@ -30,6 +30,18 @@ namespace ProjetoVenda.Controller
             return repository.getAll();
         }
 
+        public List<Product> listarPorPagina(int qtd, int pagina)
+        {
+            return repository.listarPorPagina(qtd, pagina);
+        }
+
+        public int quantidadePaginas(int quantidadeItens)
+        {
+            int totalProdutos = repository.quantidadeProdutos();
+            return (int)Math.Ceiling((decimal)totalProdutos / quantidadeItens);
+
+        }
+
         public bool atualizar(Product product)
         {
             // falta adicionar regras de validação

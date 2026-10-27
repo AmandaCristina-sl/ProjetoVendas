@@ -38,6 +38,9 @@
             dgvProdutos = new DataGridView();
             btnAtualizar = new Button();
             btnExcluir = new Button();
+            btnAnterior = new Button();
+            btnProximo = new Button();
+            lblPaginas = new Label();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
@@ -108,7 +111,7 @@
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.ReadOnly = true;
             dgvProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProdutos.Size = new Size(643, 343);
+            dgvProdutos.Size = new Size(643, 374);
             dgvProdutos.TabIndex = 5;
             dgvProdutos.CellContentDoubleClick += dgvProdutos_CellContentDoubleClick;
             dgvProdutos.CellDoubleClick += dgvProdutos_CellDoubleClick;
@@ -138,12 +141,51 @@
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
+            // btnAnterior
+            // 
+            btnAnterior.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAnterior.ForeColor = Color.DarkSlateBlue;
+            btnAnterior.Location = new Point(33, 660);
+            btnAnterior.Name = "btnAnterior";
+            btnAnterior.Size = new Size(117, 39);
+            btnAnterior.TabIndex = 8;
+            btnAnterior.Text = "<- Anterior";
+            btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
+            // 
+            // btnProximo
+            // 
+            btnProximo.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProximo.ForeColor = Color.DarkSlateBlue;
+            btnProximo.Location = new Point(529, 660);
+            btnProximo.Name = "btnProximo";
+            btnProximo.Size = new Size(126, 39);
+            btnProximo.TabIndex = 9;
+            btnProximo.Text = "Próximo ->";
+            btnProximo.UseVisualStyleBackColor = true;
+            btnProximo.Click += btnProximo_Click;
+            // 
+            // lblPaginas
+            // 
+            lblPaginas.Font = new Font("Cascadia Code SemiLight", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPaginas.ForeColor = Color.Lavender;
+            lblPaginas.Location = new Point(183, 666);
+            lblPaginas.Name = "lblPaginas";
+            lblPaginas.Size = new Size(311, 33);
+            lblPaginas.TabIndex = 10;
+            lblPaginas.Text = "Página: 1 de 5";
+            lblPaginas.TextAlign = ContentAlignment.MiddleCenter;
+            lblPaginas.Click += label2_Click;
+            // 
             // frmCadastroProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(675, 624);
+            ClientSize = new Size(675, 734);
+            Controls.Add(lblPaginas);
+            Controls.Add(btnProximo);
+            Controls.Add(btnAnterior);
             Controls.Add(btnExcluir);
             Controls.Add(btnAtualizar);
             Controls.Add(dgvProdutos);
@@ -175,5 +217,8 @@
         private DataGridView dgvProdutos;
         private Button btnAtualizar;
         private Button btnExcluir;
+        private Button btnAnterior;
+        private Button btnProximo;
+        private Label lblPaginas;
     }
 }
