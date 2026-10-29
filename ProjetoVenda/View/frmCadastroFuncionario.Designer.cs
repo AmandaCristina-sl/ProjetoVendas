@@ -165,6 +165,7 @@
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
             Controls.Add(txtNome);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;

@@ -13,17 +13,28 @@ namespace ProjetoVenda
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmCadastroFuncionario());
 
-            //using é utilizado de modo temporario, enxergue como se fosse um "IF".
-            using (frmLogin login = new frmLogin()) // criação da nossa instancia, da nossa variavel
+            while (true)
             {
-                if (login.ShowDialog() == DialogResult.OK)
+                //using é utilizado de modo temporario, enxergue como se fosse um "IF".
+                using (frmLogin login = new frmLogin()) // criação da nossa instancia, da nossa variavel
                 {
-                    Application.Run(new frmPrincipal());
+                    if (login.ShowDialog() != DialogResult.OK)
+                    {
+                        break;
+
+                    }
+                }
+
+                using frmPrincipal principal = new frmPrincipal();
+                {
+                    Application.Run(principal);
+                    if (principal.DialogResult != DialogResult.Retry)
+                    {
+                        break;
+                    }
 
                 }
-            }
-
-
+            }            
         }
     }
 }

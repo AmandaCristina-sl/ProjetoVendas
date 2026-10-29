@@ -24,17 +24,39 @@ namespace ProjetoVenda.View
 
         }
 
+        private void exibirFormulario(Form formulario)
+        {
+            while (painelPrincipal.Controls.Count > 0)
+            {
+                painelPrincipal.Controls[0].Dispose();
+            }
+
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+
+            painelPrincipal.Controls.Add(formulario);
+            formulario.Show();
+        }
+
         private void btnCadFuncionario_Click(object sender, EventArgs e)
         {
             frmCadastroFuncionario frm = new frmCadastroFuncionario();
-            frm.ShowDialog();
+            exibirFormulario(frm);
 
         }
 
         private void btnCadastrarProduto_Click(object sender, EventArgs e)
         {
             frmCadastroProduto frmProduto = new frmCadastroProduto();
-            frmProduto.ShowDialog();
+            exibirFormulario(frmProduto);
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            // evento para sair
+            this.DialogResult = DialogResult.Retry;
+            this.Dispose();
         }
     }
 }

@@ -41,48 +41,60 @@ namespace ProjetoVenda.View
                 quantidade = quantidade
             };
             // Enviar os dados para Controller
-            bool resp = controller.createProduct(product);
-            if (resp)
+            try
+            {
+                bool resp = controller.createProduct(product);
+                if (resp)
 
-            {
-                MessageBox.Show("Produto Cadastrado Com Sucesso",
-                    "CADASTRO PRODUTO",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-                LimparCampos();
-                carregarProdutos();
+                {
+                    MessageBox.Show("Produto Cadastrado Com Sucesso",
+                        "CADASTRO PRODUTO",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    LimparCampos();
+                    carregarProdutos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao Cadastrar Produto",
+                        "CADASTRO PRODUTO",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Cadastrar Produto",
-                    "CADASTRO PRODUTO",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                //mostrar o porque deu errado
+                MessageBox.Show(ex.Message,
+                        "ERRO NO CADASTRO DO PRODUTO",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
             }
+            
         }
 
         private void frmCadastroProduto_Load(object sender, EventArgs e)
         {
-            // finalizar a lista de produtos
+            this.cbxQuantidadeItens.SelectedIndex = 0;
             carregarProdutos();
-            //int paginas = controller.quantidadePaginas(5);
-            //lblPaginas.Text = $" 1 de {paginas}";
+            
         }
 
         private void carregarProdutos()
         {
-            List<Product> list = controller.listarPorPagina(totalPorPagina, paginaAtual);
-            dgvProdutos.DataSource = list;
-            this.dgvProdutos.Columns["cod_funcionario"].Visible = false;
-            
             totalDePaginas = controller.quantidadePaginas(totalPorPagina);
             if (paginaAtual > totalDePaginas)
             {
                 paginaAtual = totalDePaginas;
             }
             atualizarLblPaginas();
+
+            List<Product> list = controller.listarPorPagina(totalPorPagina, paginaAtual);
+            dgvProdutos.DataSource = list;
+            this.dgvProdutos.Columns["cod_funcionario"].Visible = false;
 
         }
 
@@ -207,12 +219,20 @@ namespace ProjetoVenda.View
                 atualizarLblPaginas();
                 carregarProdutos();
             }
-           
+
         }
 
         private void atualizarLblPaginas()
         {
             this.lblPaginas.Text = $"Página: {paginaAtual} de {totalDePaginas}";
+        }
+
+        private void cbxQuantidadeItens_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // capturar o numero selecionado
+            this.totalPorPagina = int.Parse(this.cbxQuantidadeItens.Text); // O INT.PARSE PODE SER O CONVERT
+            // recalcular as páginas
+            carregarProdutos();
         }
     }
 }

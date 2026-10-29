@@ -41,6 +41,8 @@
             btnAnterior = new Button();
             btnProximo = new Button();
             lblPaginas = new Label();
+            cbxQuantidadeItens = new ComboBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
@@ -73,6 +75,7 @@
             // 
             txtQuantidade.Location = new Point(230, 148);
             txtQuantidade.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            txtQuantidade.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
             txtQuantidade.Name = "txtQuantidade";
             txtQuantidade.Size = new Size(161, 23);
             txtQuantidade.TabIndex = 3;
@@ -81,7 +84,7 @@
             // 
             btnCadastroProduto.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastroProduto.ForeColor = Color.DarkSlateBlue;
-            btnCadastroProduto.Location = new Point(90, 192);
+            btnCadastroProduto.Location = new Point(90, 186);
             btnCadastroProduto.Name = "btnCadastroProduto";
             btnCadastroProduto.Size = new Size(281, 43);
             btnCadastroProduto.TabIndex = 4;
@@ -106,7 +109,7 @@
             dgvProdutos.AllowUserToDeleteRows = false;
             dgvProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProdutos.Location = new Point(12, 262);
+            dgvProdutos.Location = new Point(12, 294);
             dgvProdutos.MultiSelect = false;
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.ReadOnly = true;
@@ -120,7 +123,8 @@
             // 
             btnAtualizar.Enabled = false;
             btnAtualizar.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAtualizar.Location = new Point(446, 71);
+            btnAtualizar.ForeColor = Color.DarkSlateBlue;
+            btnAtualizar.Location = new Point(446, 80);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.Size = new Size(209, 40);
             btnAtualizar.TabIndex = 6;
@@ -133,7 +137,8 @@
             // 
             btnExcluir.Enabled = false;
             btnExcluir.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExcluir.Location = new Point(446, 136);
+            btnExcluir.ForeColor = Color.DarkSlateBlue;
+            btnExcluir.Location = new Point(446, 148);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(209, 45);
             btnExcluir.TabIndex = 7;
@@ -145,7 +150,7 @@
             // 
             btnAnterior.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAnterior.ForeColor = Color.DarkSlateBlue;
-            btnAnterior.Location = new Point(33, 660);
+            btnAnterior.Location = new Point(33, 692);
             btnAnterior.Name = "btnAnterior";
             btnAnterior.Size = new Size(117, 39);
             btnAnterior.TabIndex = 8;
@@ -157,7 +162,7 @@
             // 
             btnProximo.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProximo.ForeColor = Color.DarkSlateBlue;
-            btnProximo.Location = new Point(529, 660);
+            btnProximo.Location = new Point(529, 692);
             btnProximo.Name = "btnProximo";
             btnProximo.Size = new Size(126, 39);
             btnProximo.TabIndex = 9;
@@ -169,20 +174,44 @@
             // 
             lblPaginas.Font = new Font("Cascadia Code SemiLight", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPaginas.ForeColor = Color.Lavender;
-            lblPaginas.Location = new Point(183, 666);
+            lblPaginas.Location = new Point(156, 698);
             lblPaginas.Name = "lblPaginas";
-            lblPaginas.Size = new Size(311, 33);
+            lblPaginas.Size = new Size(367, 33);
             lblPaginas.TabIndex = 10;
             lblPaginas.Text = "Página: 1 de 5";
             lblPaginas.TextAlign = ContentAlignment.MiddleCenter;
             lblPaginas.Click += label2_Click;
+            // 
+            // cbxQuantidadeItens
+            // 
+            cbxQuantidadeItens.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxQuantidadeItens.FormattingEnabled = true;
+            cbxQuantidadeItens.Items.AddRange(new object[] { "25", "35", "50", "100" });
+            cbxQuantidadeItens.Location = new Point(12, 265);
+            cbxQuantidadeItens.Name = "cbxQuantidadeItens";
+            cbxQuantidadeItens.Size = new Size(149, 23);
+            cbxQuantidadeItens.TabIndex = 11;
+            cbxQuantidadeItens.SelectedIndexChanged += cbxQuantidadeItens_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Lavender;
+            label2.Location = new Point(12, 246);
+            label2.Name = "label2";
+            label2.Size = new Size(149, 16);
+            label2.TabIndex = 12;
+            label2.Text = "Número de linhas:";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // frmCadastroProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(675, 734);
+            ClientSize = new Size(675, 758);
+            Controls.Add(label2);
+            Controls.Add(cbxQuantidadeItens);
             Controls.Add(lblPaginas);
             Controls.Add(btnProximo);
             Controls.Add(btnAnterior);
@@ -220,5 +249,7 @@
         private Button btnAnterior;
         private Button btnProximo;
         private Label lblPaginas;
+        private ComboBox cbxQuantidadeItens;
+        private Label label2;
     }
 }

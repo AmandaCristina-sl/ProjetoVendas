@@ -20,6 +20,8 @@ namespace ProjetoVenda.Controller
         {
             int cod_funcionario = Session.userAuth.cod_funcionario;
             product.cod_funcionario = cod_funcionario;
+            // validação do produto
+            product.validar();
             // chamar a respository
             repository.createProduct(product);
             return true;
