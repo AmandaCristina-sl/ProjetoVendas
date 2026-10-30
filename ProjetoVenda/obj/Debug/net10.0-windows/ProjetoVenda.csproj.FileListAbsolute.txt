@@ -24,3 +24,5 @@ C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.
 C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\obj\Debug\net10.0-windows\ProjetoVenda.View.frmCadastroFuncionario.resources
 C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\BCrypt-Net-Next.dll
 C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\obj\Debug\net10.0-windows\ProjetoVenda.View.frmCadastroProduto.resources
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\obj\Debug\net10.0-windows\ProjetoVenda.sourcelink.json
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\obj\Debug\net10.0-windows\ProjetoVenda.View.frmPerfilUsuario.resources

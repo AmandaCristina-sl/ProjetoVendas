@@ -21,7 +21,6 @@ namespace ProjetoVenda
                     if (login.ShowDialog() != DialogResult.OK)
                     {
                         break;
-
                     }
                 }
 
