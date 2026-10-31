@@ -13,14 +13,14 @@ namespace ProjetoVenda.View
     public partial class frmPrincipal : Form
     {
 
-        private EmployeeController controller; 
+        private EmployeeController controller;
 
         public frmPrincipal()
         {
             InitializeComponent();
             controller = new EmployeeController();
             Employee? funcionario = controller.usuarioAutenticado();
-            string nome = (funcionario != null)? funcionario.nome : "";
+            string nome = (funcionario != null) ? funcionario.nome : "";
             this.Text += $" - {nome}";
         }
 
@@ -66,6 +66,12 @@ namespace ProjetoVenda.View
             controller.deslogar();
             this.DialogResult = DialogResult.Retry;
             this.Dispose();
+        }
+
+        private void btnPerfilUsuario_Click(object sender, EventArgs e)
+        {
+            frmPerfilUsuario frm = new frmPerfilUsuario();
+            exibirFormulario(frm);
         }
     }
 }

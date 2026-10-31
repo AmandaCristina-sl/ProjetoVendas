@@ -33,9 +33,10 @@
             btnCadFuncionario = new Button();
             btnCadastrarProduto = new Button();
             panel2 = new Panel();
+            btnSair = new Button();
             panel1 = new Panel();
             painelPrincipal = new Panel();
-            btnSair = new Button();
+            btnPerfilUsuario = new Button();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,6 +74,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnPerfilUsuario);
             panel2.Controls.Add(btnSair);
             panel2.Controls.Add(btnCadastrarProduto);
             panel2.Controls.Add(btnCadFuncionario);
@@ -82,6 +84,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(352, 759);
             panel2.TabIndex = 3;
+            // 
+            // btnSair
+            // 
+            btnSair.Location = new Point(18, 669);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(301, 63);
+            btnSair.TabIndex = 3;
+            btnSair.Text = "Sair do Sistema";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click;
             // 
             // panel1
             // 
@@ -99,15 +111,15 @@
             painelPrincipal.Size = new Size(658, 647);
             painelPrincipal.TabIndex = 5;
             // 
-            // btnSair
+            // btnPerfilUsuario
             // 
-            btnSair.Location = new Point(18, 669);
-            btnSair.Name = "btnSair";
-            btnSair.Size = new Size(301, 63);
-            btnSair.TabIndex = 3;
-            btnSair.Text = "Sair do Sistema";
-            btnSair.UseVisualStyleBackColor = true;
-            btnSair.Click += btnSair_Click;
+            btnPerfilUsuario.Location = new Point(67, 609);
+            btnPerfilUsuario.Name = "btnPerfilUsuario";
+            btnPerfilUsuario.Size = new Size(224, 23);
+            btnPerfilUsuario.TabIndex = 4;
+            btnPerfilUsuario.Text = "button1";
+            btnPerfilUsuario.UseVisualStyleBackColor = true;
+            btnPerfilUsuario.Click += btnPerfilUsuario_Click;
             // 
             // frmPrincipal
             // 
@@ -137,5 +149,6 @@
         private Panel panel1;
         private Panel painelPrincipal;
         private Button btnSair;
+        private Button btnPerfilUsuario;
     }
 }
