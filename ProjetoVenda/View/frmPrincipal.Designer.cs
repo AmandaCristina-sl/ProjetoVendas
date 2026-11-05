@@ -33,10 +33,10 @@
             btnCadFuncionario = new Button();
             btnCadastrarProduto = new Button();
             panel2 = new Panel();
+            btnPerfilUsuario = new Button();
             btnSair = new Button();
             panel1 = new Panel();
             painelPrincipal = new Panel();
-            btnPerfilUsuario = new Button();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // btnCadFuncionario
             // 
             btnCadFuncionario.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadFuncionario.Location = new Point(18, 158);
+            btnCadFuncionario.Location = new Point(12, 240);
             btnCadFuncionario.Name = "btnCadFuncionario";
             btnCadFuncionario.Size = new Size(328, 83);
             btnCadFuncionario.TabIndex = 1;
@@ -64,7 +64,7 @@
             // btnCadastrarProduto
             // 
             btnCadastrarProduto.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrarProduto.Location = new Point(12, 297);
+            btnCadastrarProduto.Location = new Point(12, 147);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
             btnCadastrarProduto.Size = new Size(328, 87);
             btnCadastrarProduto.TabIndex = 2;
@@ -84,6 +84,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(352, 759);
             panel2.TabIndex = 3;
+            // 
+            // btnPerfilUsuario
+            // 
+            btnPerfilUsuario.Location = new Point(50, 640);
+            btnPerfilUsuario.Name = "btnPerfilUsuario";
+            btnPerfilUsuario.Size = new Size(224, 23);
+            btnPerfilUsuario.TabIndex = 4;
+            btnPerfilUsuario.Text = "Perfil do Usuário";
+            btnPerfilUsuario.UseVisualStyleBackColor = true;
+            btnPerfilUsuario.Click += btnPerfilUsuario_Click;
             // 
             // btnSair
             // 
@@ -110,16 +120,6 @@
             painelPrincipal.Name = "painelPrincipal";
             painelPrincipal.Size = new Size(658, 647);
             painelPrincipal.TabIndex = 5;
-            // 
-            // btnPerfilUsuario
-            // 
-            btnPerfilUsuario.Location = new Point(67, 609);
-            btnPerfilUsuario.Name = "btnPerfilUsuario";
-            btnPerfilUsuario.Size = new Size(224, 23);
-            btnPerfilUsuario.TabIndex = 4;
-            btnPerfilUsuario.Text = "button1";
-            btnPerfilUsuario.UseVisualStyleBackColor = true;
-            btnPerfilUsuario.Click += btnPerfilUsuario_Click;
             // 
             // frmPrincipal
             // 

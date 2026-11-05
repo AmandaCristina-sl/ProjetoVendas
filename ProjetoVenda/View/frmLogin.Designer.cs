@@ -76,7 +76,6 @@
             label1.TabIndex = 3;
             label1.Text = "Seja bem-vindo(a)!";
             label1.UseWaitCursor = true;
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -88,7 +87,6 @@
             label2.Size = new Size(128, 17);
             label2.TabIndex = 4;
             label2.Text = "Faça seu Login:";
-            label2.Click += label2_Click;
             // 
             // frmLogin
             // 

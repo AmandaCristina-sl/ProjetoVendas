@@ -1,6 +1,7 @@
 ﻿using BCrypt.Net;
 using ProjetoVenda.Model;
 using ProjetoVenda.Repository;
+using ProjetoVenda.View;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +10,16 @@ namespace ProjetoVenda.Controller
 {
     internal class EmployeeController
     {
+        private EmployeeRepository repository;
+        public EmployeeController()
+        {
+            repository = new EmployeeRepository();
+        }
 
+        public List<Employee> getAll()
+        {
+            return repository.getAll();
+        }
 
         public static bool login(string username, string password)
         {
@@ -43,36 +53,26 @@ namespace ProjetoVenda.Controller
 
         }
 
-        public bool createEmployee(string nome, string telefone, string rua, 
-            string numero, string cep, string complemento, 
-            string usuario, string senha)
+        public bool createEmployee(Employee funcionario)
         {
             // fazer verificação se o usuario não existe
             // solicitar ao respository se o usuario existe ou nao
             EmployeeRepository respository = new EmployeeRepository();
-            Employee? resp = respository.GetByUsername(usuario);
+            Employee? resp = respository.GetByUsername(funcionario.usuario);
 
             if (resp != null)
             {
                 return false;
             }
 
-            string hash = BCrypt.Net.BCrypt.HashPassword(senha);
-            Employee funcionario = new Employee
-            {
-                nome = nome,
-                telefone = telefone,
-                rua = rua,
-                numero = numero,
-                cep = cep,
-                complemento = complemento,
-                usuario = usuario,
-                senha = hash
-            };
+            string hash = BCrypt.Net.BCrypt.HashPassword(funcionario.senha);
+            funcionario.senha = hash;
+
             respository.createEmployee(funcionario);
             return true;
 
         }
+
 
         public void deslogar()
         {
@@ -82,6 +82,15 @@ namespace ProjetoVenda.Controller
         public Employee? usuarioAutenticado()
         {
             return Session.userAuth;
+        }
+
+        public bool usuarioAdministrador()
+        {
+            if (Session.userAuth == null)
+            {
+                return false;
+            }
+            return Session.userAuth.adm;
         }
     }
 }

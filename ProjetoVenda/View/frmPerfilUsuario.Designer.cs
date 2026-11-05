@@ -57,7 +57,6 @@
             txtNome.PlaceholderText = "Nome do Funcionário:";
             txtNome.Size = new Size(337, 23);
             txtNome.TabIndex = 2;
-            txtNome.Click += txtNomeFuncionario_Click;
             // 
             // pictureBox1
             // 

@@ -28,11 +28,6 @@ namespace ProjetoVenda.View
 
         }
 
-        private void txtNomeFuncionario_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmPerfilUsuario_Load(object sender, EventArgs e)
         {
             funcionario = controller.usuarioAutenticado();
@@ -53,6 +48,7 @@ namespace ProjetoVenda.View
             txtRua.Text = funcionario.rua;
 
             txtUsuario.Text = funcionario.usuario;
+            lblUsuario.Text = funcionario.usuario;
 
         }
     }

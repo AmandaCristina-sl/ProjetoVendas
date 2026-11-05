@@ -26,9 +26,11 @@ namespace ProjetoVenda.View
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            //string username = Session.username;
-            bool isMaster = Session.isMaster;
-            //this.lblUsername.Text = username;
+            bool adm = controller.usuarioAdministrador();
+            if (!adm)
+            {
+                this.btnCadFuncionario.Visible = false;
+            }
 
         }
 

@@ -40,6 +40,9 @@
             btnCadastrar = new Button();
             txtConfirmarSenha = new TextBox();
             label1 = new Label();
+            dgvFuncionario = new DataGridView();
+            cbxAdm = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvFuncionario).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -52,22 +55,20 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(434, 44);
+            txtUsuario.Location = new Point(434, 29);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuário";
             txtUsuario.Size = new Size(192, 23);
             txtUsuario.TabIndex = 6;
-            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(434, 84);
+            txtSenha.Location = new Point(434, 58);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.PlaceholderText = "Senha";
             txtSenha.Size = new Size(192, 23);
             txtSenha.TabIndex = 7;
-            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // txtTelefone
             // 
@@ -76,7 +77,6 @@
             txtTelefone.PlaceholderText = "Telefone";
             txtTelefone.Size = new Size(128, 23);
             txtTelefone.TabIndex = 1;
-            txtTelefone.TextChanged += txtTelefone_TextChanged;
             // 
             // txtRua
             // 
@@ -85,7 +85,6 @@
             txtRua.PlaceholderText = "Rua";
             txtRua.Size = new Size(354, 23);
             txtRua.TabIndex = 5;
-            txtRua.TextChanged += textBox5_TextChanged;
             // 
             // txtCep
             // 
@@ -94,7 +93,6 @@
             txtCep.PlaceholderText = "Cep";
             txtCep.Size = new Size(107, 23);
             txtCep.TabIndex = 2;
-            txtCep.TextChanged += txtCep_TextChanged;
             // 
             // txtComplemento
             // 
@@ -103,7 +101,6 @@
             txtComplemento.PlaceholderText = "Complemento";
             txtComplemento.Size = new Size(354, 23);
             txtComplemento.TabIndex = 4;
-            txtComplemento.TextChanged += txtComplemento_TextChanged;
             // 
             // txtNumero
             // 
@@ -117,7 +114,7 @@
             // 
             btnCadastrar.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.DarkSlateBlue;
-            btnCadastrar.Location = new Point(453, 160);
+            btnCadastrar.Location = new Point(450, 160);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(155, 59);
             btnCadastrar.TabIndex = 9;
@@ -128,13 +125,12 @@
             // txtConfirmarSenha
             // 
             txtConfirmarSenha.AutoCompleteSource = AutoCompleteSource.FileSystem;
-            txtConfirmarSenha.Location = new Point(434, 122);
+            txtConfirmarSenha.Location = new Point(434, 87);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.PasswordChar = '*';
             txtConfirmarSenha.PlaceholderText = "Confirmar senha";
             txtConfirmarSenha.Size = new Size(192, 23);
             txtConfirmarSenha.TabIndex = 8;
-            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
             // 
             // label1
             // 
@@ -146,14 +142,36 @@
             label1.Size = new Size(261, 20);
             label1.TabIndex = 11;
             label1.Text = "INSIRA OS DADOS DE CADASTRO:";
-            label1.Click += label1_Click;
+            // 
+            // dgvFuncionario
+            // 
+            dgvFuncionario.AllowUserToAddRows = false;
+            dgvFuncionario.AllowUserToDeleteRows = false;
+            dgvFuncionario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFuncionario.Location = new Point(21, 242);
+            dgvFuncionario.Name = "dgvFuncionario";
+            dgvFuncionario.Size = new Size(632, 460);
+            dgvFuncionario.TabIndex = 12;
+            // 
+            // cbxAdm
+            // 
+            cbxAdm.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxAdm.FormattingEnabled = true;
+            cbxAdm.Items.AddRange(new object[] { "Funcionário", "Administrador" });
+            cbxAdm.Location = new Point(434, 116);
+            cbxAdm.Name = "cbxAdm";
+            cbxAdm.Size = new Size(192, 23);
+            cbxAdm.TabIndex = 13;
             // 
             // frmCadastroFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(675, 266);
+            ClientSize = new Size(675, 714);
+            Controls.Add(cbxAdm);
+            Controls.Add(dgvFuncionario);
             Controls.Add(label1);
             Controls.Add(txtConfirmarSenha);
             Controls.Add(btnCadastrar);
@@ -170,6 +188,8 @@
             Name = "frmCadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Funcionario";
+            Load += frmCadastroFuncionario_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvFuncionario).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +207,7 @@
         private Button btnCadastrar;
         private TextBox txtConfirmarSenha;
         private Label label1;
+        private DataGridView dgvFuncionario;
+        private ComboBox cbxAdm;
     }
 }
