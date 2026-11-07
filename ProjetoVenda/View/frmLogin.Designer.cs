@@ -38,7 +38,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(31, 64);
+            txtUsuario.Location = new Point(32, 99);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuário:";
             txtUsuario.Size = new Size(207, 23);
@@ -46,7 +46,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(31, 110);
+            txtSenha.Location = new Point(32, 145);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.PlaceholderText = "Senha";
@@ -57,7 +57,7 @@
             // 
             btnLogin.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.DarkSlateBlue;
-            btnLogin.Location = new Point(65, 154);
+            btnLogin.Location = new Point(66, 189);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(132, 25);
             btnLogin.TabIndex = 2;
@@ -70,7 +70,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cascadia Code", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Lavender;
-            label1.Location = new Point(47, 9);
+            label1.Location = new Point(46, 33);
             label1.Name = "label1";
             label1.Size = new Size(171, 20);
             label1.TabIndex = 3;
@@ -82,7 +82,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Lavender;
-            label2.Location = new Point(69, 29);
+            label2.Location = new Point(68, 53);
             label2.Name = "label2";
             label2.Size = new Size(128, 17);
             label2.TabIndex = 4;
@@ -93,7 +93,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(263, 221);
+            ClientSize = new Size(263, 251);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnLogin);

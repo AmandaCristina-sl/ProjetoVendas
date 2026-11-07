@@ -226,7 +226,6 @@
             Controls.Add(txtNome);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadastroProduto";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Produtos";
             Load += frmCadastroProduto_Load;
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).EndInit();

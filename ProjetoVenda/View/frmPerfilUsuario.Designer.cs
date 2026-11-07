@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerfilUsuario));
             label2 = new Label();
             txtNome = new TextBox();
             pictureBox1 = new PictureBox();
@@ -43,6 +44,8 @@
             // 
             // label2
             // 
+            label2.Font = new Font("Cascadia Code", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Lavender;
             label2.Location = new Point(205, 25);
             label2.Name = "label2";
             label2.Size = new Size(337, 23);
@@ -54,16 +57,15 @@
             // 
             txtNome.Location = new Point(205, 62);
             txtNome.Name = "txtNome";
-            txtNome.PlaceholderText = "Nome do Funcionário:";
             txtNome.Size = new Size(337, 23);
             txtNome.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Funcionario;
-            pictureBox1.Location = new Point(50, 12);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(50, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(117, 141);
+            pictureBox1.Size = new Size(136, 138);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -106,9 +108,11 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(50, 196);
+            lblUsuario.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.ForeColor = Color.Lavender;
+            lblUsuario.Location = new Point(50, 194);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(60, 15);
+            lblUsuario.Size = new Size(88, 17);
             lblUsuario.TabIndex = 9;
             lblUsuario.Text = "lblUsuario";
             // 
@@ -123,6 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkSlateBlue;
             ClientSize = new Size(591, 297);
             Controls.Add(txtUsuario);
             Controls.Add(lblUsuario);
@@ -135,7 +140,7 @@
             Controls.Add(txtNome);
             Controls.Add(label2);
             Name = "frmPerfilUsuario";
-            Text = "frmPerfilUsuario";
+            Text = "Perfil do Usuário";
             Load += frmPerfilUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

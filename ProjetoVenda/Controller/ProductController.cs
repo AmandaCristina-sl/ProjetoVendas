@@ -27,7 +27,7 @@ namespace ProjetoVenda.Controller
             return true;
         }
 
-        public List<Product> getAll()
+        public List<Product> ListarProdutos()
         {
             return repository.getAll();
         }

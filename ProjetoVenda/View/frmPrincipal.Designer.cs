@@ -33,11 +33,14 @@
             btnCadFuncionario = new Button();
             btnCadastrarProduto = new Button();
             panel2 = new Panel();
+            btnCadastroVenda = new Button();
             btnPerfilUsuario = new Button();
             btnSair = new Button();
             panel1 = new Panel();
+            lblTitulo = new Label();
             painelPrincipal = new Panel();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblUsername
@@ -74,6 +77,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnCadastroVenda);
             panel2.Controls.Add(btnPerfilUsuario);
             panel2.Controls.Add(btnSair);
             panel2.Controls.Add(btnCadastrarProduto);
@@ -84,6 +88,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(352, 759);
             panel2.TabIndex = 3;
+            // 
+            // btnCadastroVenda
+            // 
+            btnCadastroVenda.Location = new Point(12, 338);
+            btnCadastroVenda.Name = "btnCadastroVenda";
+            btnCadastroVenda.Size = new Size(328, 65);
+            btnCadastroVenda.TabIndex = 5;
+            btnCadastroVenda.Text = "Cadastrar Venda";
+            btnCadastroVenda.UseVisualStyleBackColor = true;
+            btnCadastroVenda.Click += btnCadastroVenda_Click;
             // 
             // btnPerfilUsuario
             // 
@@ -107,15 +121,28 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblTitulo);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(352, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(658, 112);
             panel1.TabIndex = 4;
             // 
+            // lblTitulo
+            // 
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Cascadia Code", 27.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.DarkSlateBlue;
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(658, 112);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Título da tela";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // painelPrincipal
             // 
-            painelPrincipal.Dock = DockStyle.Right;
+            painelPrincipal.Anchor = AnchorStyles.Left;
             painelPrincipal.Location = new Point(352, 112);
             painelPrincipal.Name = "painelPrincipal";
             painelPrincipal.Size = new Size(658, 647);
@@ -125,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
+            BackColor = Color.Lavender;
             ClientSize = new Size(1010, 759);
             Controls.Add(painelPrincipal);
             Controls.Add(panel1);
@@ -137,6 +164,7 @@
             Load += frmPrincipal_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -150,5 +178,7 @@
         private Panel painelPrincipal;
         private Button btnSair;
         private Button btnPerfilUsuario;
+        private Button btnCadastroVenda;
+        private Label lblTitulo;
     }
 }

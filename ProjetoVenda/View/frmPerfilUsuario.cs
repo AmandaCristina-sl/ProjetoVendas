@@ -48,7 +48,7 @@ namespace ProjetoVenda.View
             txtRua.Text = funcionario.rua;
 
             txtUsuario.Text = funcionario.usuario;
-            lblUsuario.Text = funcionario.usuario;
+            lblUsuario.Text = funcionario.nome;
 
         }
     }
