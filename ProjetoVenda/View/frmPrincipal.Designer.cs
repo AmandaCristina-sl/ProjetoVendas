@@ -86,7 +86,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(352, 759);
+            panel2.Size = new Size(352, 862);
             panel2.TabIndex = 3;
             // 
             // btnCadastroVenda
@@ -142,10 +142,9 @@
             // 
             // painelPrincipal
             // 
-            painelPrincipal.Anchor = AnchorStyles.Left;
             painelPrincipal.Location = new Point(352, 112);
             painelPrincipal.Name = "painelPrincipal";
-            painelPrincipal.Size = new Size(658, 647);
+            painelPrincipal.Size = new Size(658, 750);
             painelPrincipal.TabIndex = 5;
             // 
             // frmPrincipal
@@ -153,7 +152,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lavender;
-            ClientSize = new Size(1010, 759);
+            ClientSize = new Size(1010, 862);
             Controls.Add(painelPrincipal);
             Controls.Add(panel1);
             Controls.Add(panel2);

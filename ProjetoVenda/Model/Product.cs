@@ -14,6 +14,10 @@ namespace ProjetoVenda.Model
         public int quantidade { get; set; }
         public DateTime data_registro { get; set; }
 
+        public decimal precoReal => this.preco / 100m;
+        // aqui o "maior e igual" estará como se sempre voltasse o valor real, ou seja, fará o "calculo" primeiro e depois voltará o valor que deve ser.
+       
+
         public void validar()
         {
             if (preco <= 0)

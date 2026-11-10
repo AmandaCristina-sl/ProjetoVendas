@@ -11,7 +11,7 @@ namespace ProjetoVenda
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            //Application.Run(new frmCadastroFuncionario());
+            //Application.Run(new frmCadastroVenda());
 
             while (true)
             {

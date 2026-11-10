@@ -169,7 +169,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(675, 714);
+            ClientSize = new Size(675, 719);
             Controls.Add(cbxAdm);
             Controls.Add(dgvFuncionario);
             Controls.Add(label1);
@@ -183,7 +183,6 @@
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
             Controls.Add(txtNome);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadastroFuncionario";
             Text = "Cadastro Funcionário";
