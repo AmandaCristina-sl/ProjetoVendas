@@ -14,12 +14,14 @@ namespace ProjetoVenda.View
     {
 
         private ProductController produtoControle;
+        private VendaControle vendaControle;
         private List<Item> carrinho = new List<Item>(); // aqui de fato será a nosta lista de produtos do carrinho.
 
         public frmCadastroVenda()
         {
             InitializeComponent();
             produtoControle = new ProductController();
+            vendaControle = new VendaControle();
         }
 
         private void carregarProdutos()
@@ -82,8 +84,7 @@ namespace ProjetoVenda.View
 
         public void atualizarCarrinho()
         {
-            this.dgvCarrinho.DataSource = null;
-            this.dgvCarrinho.DataSource = this.carrinho;
+            this.dgvCarrinho.DataSource = this.carrinho.ToList();
             this.btnCadastrarVenda.Enabled = this.carrinho.Count() > 0;
             decimal total = this.carrinho.Sum(item => item.subTotal);
             this.lblTotalVenda.Text = $"Valor Total: {total:C2}";
@@ -149,11 +150,27 @@ namespace ProjetoVenda.View
                 return;
             }
             // Ao adicionar jogar as informações para o controller (falta)
-            carrinho.Clear();
-            frmCadastroVenda_Load(this, EventArgs.Empty);
-            MessageBox.Show("Venda Cadastrada com sucesso!!");
-            
+            try
+            {
+                bool resposta = vendaControle.cadastrarVenda(this.carrinho);
+                if (resposta) 
+                {
+                    carrinho.Clear();
+                    frmCadastroVenda_Load(this, EventArgs.Empty);
+                    MessageBox.Show("Venda Cadastrada com sucesso!!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao Cadastrar venda!", "Erro no Cadastro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message} ", "Erro no Cadastro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
         }
     }
 }

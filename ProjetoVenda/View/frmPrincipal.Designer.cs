@@ -59,7 +59,7 @@
             btnCadFuncionario.Location = new Point(12, 240);
             btnCadFuncionario.Name = "btnCadFuncionario";
             btnCadFuncionario.Size = new Size(328, 83);
-            btnCadFuncionario.TabIndex = 1;
+            btnCadFuncionario.TabIndex = 2;
             btnCadFuncionario.Text = "Cadastrar Funcionário";
             btnCadFuncionario.UseVisualStyleBackColor = true;
             btnCadFuncionario.Click += btnCadFuncionario_Click;
@@ -70,7 +70,7 @@
             btnCadastrarProduto.Location = new Point(12, 147);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
             btnCadastrarProduto.Size = new Size(328, 87);
-            btnCadastrarProduto.TabIndex = 2;
+            btnCadastrarProduto.TabIndex = 1;
             btnCadastrarProduto.Text = "Cadastrar Produto";
             btnCadastrarProduto.UseVisualStyleBackColor = true;
             btnCadastrarProduto.Click += btnCadastrarProduto_Click;
@@ -94,7 +94,7 @@
             btnCadastroVenda.Location = new Point(12, 338);
             btnCadastroVenda.Name = "btnCadastroVenda";
             btnCadastroVenda.Size = new Size(328, 65);
-            btnCadastroVenda.TabIndex = 5;
+            btnCadastroVenda.TabIndex = 3;
             btnCadastroVenda.Text = "Cadastrar Venda";
             btnCadastroVenda.UseVisualStyleBackColor = true;
             btnCadastroVenda.Click += btnCadastroVenda_Click;
@@ -114,7 +114,7 @@
             btnSair.Location = new Point(18, 669);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(301, 63);
-            btnSair.TabIndex = 3;
+            btnSair.TabIndex = 5;
             btnSair.Text = "Sair do Sistema";
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
