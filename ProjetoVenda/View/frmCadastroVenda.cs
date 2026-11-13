@@ -58,6 +58,7 @@ namespace ProjetoVenda.View
                     Name = "colunaQuantidade",
                     DataPropertyName = "quantidade",
                 });
+
             this.dgvCarrinho.Columns.Add(
                 new DataGridViewTextBoxColumn
                 {
@@ -68,6 +69,14 @@ namespace ProjetoVenda.View
                     {
                         Format = "C2"
                     }
+                });
+            this.dgvCarrinho.Columns.Add(
+                new DataGridViewButtonColumn
+                {
+                    HeaderText = "Excluir",
+                    Name = "colunaExcluir",
+                    Text = "excluir",
+                    UseColumnTextForButtonValue = true,
                 });
             this.dgvCarrinho.Columns.Add(
                 new DataGridViewTextBoxColumn
@@ -145,7 +154,7 @@ namespace ProjetoVenda.View
                 "CONFIRMAÇÃO DA VENDA",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question
                 );
-            if ( confirmar == DialogResult.No)
+            if (confirmar == DialogResult.No)
             {
                 return;
             }
@@ -153,7 +162,7 @@ namespace ProjetoVenda.View
             try
             {
                 bool resposta = vendaControle.cadastrarVenda(this.carrinho);
-                if (resposta) 
+                if (resposta)
                 {
                     carrinho.Clear();
                     frmCadastroVenda_Load(this, EventArgs.Empty);
@@ -164,13 +173,41 @@ namespace ProjetoVenda.View
                     MessageBox.Show("Erro ao Cadastrar venda!", "Erro no Cadastro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro: {ex.Message} ", "Erro no Cadastro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+            }
+        }
+
+        private void dgvCarrinho_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
+            if (this.dgvCarrinho.Columns[e.ColumnIndex].Name == "colunaExcluir")
+            {
+                excluirItemCarrinho(e.RowIndex);
+            }
+        }
+
+        private void excluirItemCarrinho(int indice)
+        {
+            DialogResult confirmar = MessageBox.Show(
+                $"Deseja excluir o Item {this.carrinho[indice].nomeProduto} ?",
+                "EXCLUSÃO DE ITENS",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                );
+            if (confirmar == DialogResult.No)
+            {
+                return;
+            }
+            this.carrinho.RemoveAt(indice);
+            atualizarCarrinho();
+            // excluir o item
         }
     }
 }
