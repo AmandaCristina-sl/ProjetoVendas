@@ -1,4 +1,4 @@
-﻿namespace ProjetoVenda.View
+﻿namespace ProjetoVenda.formulario
 {
     partial class frmPrincipal
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetoVenda.Model
+namespace ProjetoVenda.modelo
 {
     // dados do funcionario no banco
-    internal class Employee
+    internal class Funcionario
     {
         public int cod_funcionario { get; set ; }
         public string nome { get; set; }

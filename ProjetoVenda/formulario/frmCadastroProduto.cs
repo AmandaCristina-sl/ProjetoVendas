@@ -1,5 +1,5 @@
-﻿using ProjetoVenda.Controller;
-using ProjetoVenda.Model;
+﻿using ProjetoVenda.controle;
+using ProjetoVenda.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +9,12 @@ using System.Text;
 using System.Windows.Forms;
 
 
-namespace ProjetoVenda.View
+namespace ProjetoVenda.formulario
 {
     public partial class frmCadastroProduto : Form
     {
-        private ProductController controller;
-        private Product? produtoSelecionado;
+        private ProdutoControle controller;
+        private Produto? produtoSelecionado;
 
         private int totalDePaginas = 5;
         private int paginaAtual = 1;
@@ -22,7 +22,7 @@ namespace ProjetoVenda.View
         public frmCadastroProduto()
         {
             InitializeComponent();
-            controller = new ProductController();
+            controller = new ProdutoControle();
         }
 
         private void btnCadastroProduto_Click(object sender, EventArgs e)
@@ -33,17 +33,17 @@ namespace ProjetoVenda.View
             int quantidade = Convert.ToInt32(this.txtQuantidade.Text);
 
             // Emcapsulado os dados
-            Product product = new Product
+            Produto product = new Produto
             {
                 nome = nome,
                 marca = marca,
                 preco = preco,
                 quantidade = quantidade
             };
-            // Enviar os dados para Controller
+            // Enviar os dados para controle
             try
             {
-                bool resp = controller.createProduct(product);
+                bool resp = controller.criarProduto(product);
                 if (resp)
 
                 {
@@ -92,7 +92,7 @@ namespace ProjetoVenda.View
             }
             atualizarLblPaginas();
 
-            List<Product> list = controller.listarPorPagina(totalPorPagina, paginaAtual);
+            List<Produto> list = controller.listarPorPagina(totalPorPagina, paginaAtual);
             dgvProdutos.DataSource = list;
             this.dgvProdutos.Columns["cod_funcionario"].Visible = false;
             this.dgvProdutos.Columns["precoReal"].Visible = false;
@@ -155,7 +155,7 @@ namespace ProjetoVenda.View
                 return;
             }
             DataGridViewRow linha = this.dgvProdutos.Rows[e.RowIndex];
-            Product? produto = linha.DataBoundItem as Product;
+            Produto? produto = linha.DataBoundItem as Produto;
 
             this.txtNome.Text = produto.nome;
             this.txtMarca.Text = produto.marca;

@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using ProjetoVenda.Controller;
+using ProjetoVenda.controle;
 
-namespace ProjetoVenda.View
+namespace ProjetoVenda.formulario
 {
     public partial class frmLogin : Form
     {
@@ -24,7 +24,7 @@ namespace ProjetoVenda.View
             string usuario = this.txtUsuario.Text;
             string senha = this.txtSenha.Text;
 
-            if (EmployeeController.login(usuario, senha)) // dialogo
+            if (FuncionarioControle.autenticar(usuario, senha)) // dialogo
             {
                 //rewsultado do dialogo quando da certo:
                 this.DialogResult = DialogResult.OK;

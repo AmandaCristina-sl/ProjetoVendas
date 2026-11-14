@@ -3,17 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetoVenda.dataBase
+namespace ProjetoVenda.bancodedados
 {
 
     // classe de conexão
-    internal static class DataBase
+    internal static class BancoDeDados
     {
-        private static string stringConnection;
+        private static string textoDeConexao;
         
 
 
-        static DataBase()
+        static BancoDeDados()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder 
             { 
@@ -23,13 +23,13 @@ namespace ProjetoVenda.dataBase
                 UserID = "root",
                 Password = ""
             };
-            stringConnection = builder.ConnectionString;
+            textoDeConexao = builder.ConnectionString;
         }
 
    
-        public static MySqlConnection GetConnection()
+        public static MySqlConnection conexao()
         {
-            MySqlConnection connection = new MySqlConnection(stringConnection);
+            MySqlConnection connection = new MySqlConnection(textoDeConexao);
             try
             {
                 //tenta fazer algo

@@ -1,5 +1,5 @@
-﻿using ProjetoVenda.Controller;
-using ProjetoVenda.Model;
+﻿using ProjetoVenda.controle;
+using ProjetoVenda.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,18 +8,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProjetoVenda.View
+namespace ProjetoVenda.formulario
 {
     public partial class frmPerfilUsuario : Form
     {
 
-        private EmployeeController controller;
-        private Employee funcionario;
+        private FuncionarioControle controller;
+        private Funcionario funcionario;
 
         public frmPerfilUsuario()
         {
             InitializeComponent();
-            controller = new EmployeeController();
+            controller = new FuncionarioControle();
         }
 
         private void lblDadosFuncionario_Click(object sender, EventArgs e)

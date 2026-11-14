@@ -1,5 +1,5 @@
-﻿using ProjetoVenda.Controller;
-using ProjetoVenda.Model;
+﻿using ProjetoVenda.controle;
+using ProjetoVenda.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,18 +8,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProjetoVenda.View
+namespace ProjetoVenda.formulario
 {
     public partial class frmPrincipal : Form
     {
 
-        private EmployeeController controller;
+        private FuncionarioControle controller;
 
         public frmPrincipal()
         {
             InitializeComponent();
-            controller = new EmployeeController();
-            Employee? funcionario = controller.usuarioAutenticado();
+            controller = new FuncionarioControle();
+            Funcionario? funcionario = controller.usuarioAutenticado();
             string nome = (funcionario != null) ? funcionario.nome : "";
             this.Text += $" - {nome}";
         }

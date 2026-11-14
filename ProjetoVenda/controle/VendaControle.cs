@@ -1,28 +1,28 @@
-﻿using ProjetoVenda.Model;
-using ProjetoVenda.Repository;
+﻿using ProjetoVenda.modelo;
+using ProjetoVenda.repositorio;
 using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
-namespace ProjetoVenda.Controller
+namespace ProjetoVenda.controle
 {
     internal class VendaControle
     {
-        EmployeeController employeeController;
+        FuncionarioControle funcionarioControle;
         VendaRepositorio vendaRepositorio;
 
         // construtor
         public VendaControle()
         {
-            employeeController = new EmployeeController();
+            funcionarioControle = new FuncionarioControle();
             vendaRepositorio = new VendaRepositorio();
 
         }
 
         public bool cadastrarVenda(List<Item> itens)
         {
-            Employee? funcionario = employeeController.usuarioAutenticado();
+            Funcionario? funcionario = funcionarioControle.usuarioAutenticado();
             if (funcionario == null)
             {
                 throw new Exception("Usuário não autenticado!!");
@@ -34,7 +34,7 @@ namespace ProjetoVenda.Controller
                 itens = itens
             };
 
-            // enviar para a repository
+            // enviar para a repositorio
             vendaRepositorio.cadastrarVenda(venda);
             return true;
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetoVenda.Model
+namespace ProjetoVenda.modelo
 {
     internal class Item
     {

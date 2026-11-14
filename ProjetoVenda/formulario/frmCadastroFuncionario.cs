@@ -1,6 +1,6 @@
-﻿using ProjetoVenda.Controller;
-using ProjetoVenda.Model;
-using ProjetoVenda.Repository;
+﻿using ProjetoVenda.controle;
+using ProjetoVenda.modelo;
+using ProjetoVenda.repositorio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,18 +13,18 @@ using System.Text;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace ProjetoVenda.View
+namespace ProjetoVenda.formulario
 {
     public partial class frmCadastroFuncionario : Form
     {
 
-        private EmployeeController controller;
-        private Employee funcionario;
+        private FuncionarioControle controller;
+        private Funcionario funcionario;
 
         public frmCadastroFuncionario()
         {
             InitializeComponent();
-            controller = new EmployeeController();
+            controller = new FuncionarioControle();
         }
 
        
@@ -69,7 +69,7 @@ namespace ProjetoVenda.View
             }
             // chamar o controlador do usuario para cadastro
 
-            Employee funcionario = new Employee
+            Funcionario funcionario = new Funcionario
             {
                 nome = nome,
                 telefone = telefone,
@@ -82,7 +82,7 @@ namespace ProjetoVenda.View
                 adm = adm
             };
             
-            bool resp = controller.createEmployee(funcionario);
+            bool resp = controller.criarFuncionario(funcionario);
 
             if (resp)
 
@@ -109,7 +109,7 @@ namespace ProjetoVenda.View
 
         private void carregarFuncionario()
         {
-            List<Employee> list = controller.getAll();
+            List<Funcionario> list = controller.listarFuncionarios();
             dgvFuncionario.DataSource = list;
             this.dgvFuncionario.Columns["senha"].Visible = false;
            

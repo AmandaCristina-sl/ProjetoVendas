@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetoVenda.Model
+namespace ProjetoVenda.modelo
 {
-    internal class Product
+    internal class Produto
     {
         public int cod_produto { get; set; }
         public int cod_funcionario { get; set; }

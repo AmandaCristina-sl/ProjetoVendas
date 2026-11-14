@@ -1,15 +1,15 @@
-﻿using ProjetoVenda.Model;
+﻿using ProjetoVenda.modelo;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace ProjetoVenda.Controller
+namespace ProjetoVenda.controle
 {
-    internal static class Session
+    internal static class Sessao
     {
         // o "?" significa que ele poderá receber um usuário ou um campo vazio.
-        public static Employee? userAuth;   
+        public static Funcionario? usuarioAutenticado;   
        
     }
 }

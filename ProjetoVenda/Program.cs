@@ -1,4 +1,4 @@
-using ProjetoVenda.View;
+using ProjetoVenda.formulario;
 
 namespace ProjetoVenda
 {

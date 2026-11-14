@@ -1,5 +1,5 @@
-﻿using ProjetoVenda.Controller;
-using ProjetoVenda.Model;
+﻿using ProjetoVenda.controle;
+using ProjetoVenda.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,25 +8,25 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProjetoVenda.View
+namespace ProjetoVenda.formulario
 {
     public partial class frmCadastroVenda : Form
     {
 
-        private ProductController produtoControle;
+        private ProdutoControle produtoControle;
         private VendaControle vendaControle;
         private List<Item> carrinho = new List<Item>(); // aqui de fato será a nosta lista de produtos do carrinho.
 
         public frmCadastroVenda()
         {
             InitializeComponent();
-            produtoControle = new ProductController();
+            produtoControle = new ProdutoControle();
             vendaControle = new VendaControle();
         }
 
         private void carregarProdutos()
         {
-            List<Product> lista = produtoControle.ListarProdutos();
+            List<Produto> lista = produtoControle.ListarProdutos();
             cbxProdutos.DataSource = lista;
             cbxProdutos.DisplayMember = "nome";
             cbxProdutos.ValueMember = "cod_produto";
@@ -109,7 +109,7 @@ namespace ProjetoVenda.View
 
         private void cbxProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Product produto = cbxProdutos.SelectedItem as Product;
+            Produto produto = cbxProdutos.SelectedItem as Produto;
             this.lblPreco.Text = $"Preço Unitário: {produto.precoReal:C2}";
             this.lblQuantidade.Text = $"Quantidade disponível: {produto.quantidade}";
             this.numQuantidade.Maximum = produto.quantidade;
@@ -118,7 +118,7 @@ namespace ProjetoVenda.View
 
         private void btnAdicionarVenda_Click(object sender, EventArgs e)
         {
-            Product produto = cbxProdutos.SelectedItem as Product;
+            Produto produto = cbxProdutos.SelectedItem as Produto;
             int quantidade = (int)this.numQuantidade.Value;
             if(quantidade < 1)
             {

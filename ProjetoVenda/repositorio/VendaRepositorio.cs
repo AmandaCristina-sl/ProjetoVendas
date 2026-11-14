@@ -1,17 +1,17 @@
 ﻿using MySqlConnector;
-using ProjetoVenda.dataBase;
-using ProjetoVenda.Model;
+using ProjetoVenda.bancodedados;
+using ProjetoVenda.modelo;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetoVenda.Repository
+namespace ProjetoVenda.repositorio
 {
     internal class VendaRepositorio
     {
         public bool cadastrarVenda(Venda venda)
         {
-            using MySqlConnection conector = DataBase.GetConnection();
+            using MySqlConnection conector = BancoDeDados.conexao();
             using MySqlTransaction transacao = conector.BeginTransaction();
             try
             {
@@ -22,12 +22,12 @@ namespace ProjetoVenda.Repository
                     WHERE cod_produto = @cod_produto FOR UPDATE";
                     using MySqlCommand cmdBloqueioProduto = new MySqlCommand(sqlBloqueioProduto, conector, transacao);
                     cmdBloqueioProduto.Parameters.AddWithValue("@cod_produto", item.cod_produto);
-                    using MySqlDataReader reader = cmdBloqueioProduto.ExecuteReader();
-                    if (!reader.Read())
+                    using MySqlDataReader cursor = cmdBloqueioProduto.ExecuteReader();
+                    if (!cursor.Read())
                     {
                         throw new Exception("Erro no Registro!!");
                     }
-                    int quantidade = reader.GetInt32("quantidade");
+                    int quantidade = cursor.GetInt32("quantidade");
                     if (quantidade < item.quantidade)
                     {
                         throw new Exception($"Quantidade indisponível no Estoque do Produto: {item.nomeProduto}!!");
