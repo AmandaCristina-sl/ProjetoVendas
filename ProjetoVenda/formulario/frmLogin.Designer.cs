@@ -32,70 +32,97 @@
             txtUsuario = new TextBox();
             txtSenha = new TextBox();
             btnLogin = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
-            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(32, 99);
+            txtUsuario.Location = new Point(53, 154);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.PlaceholderText = "Usuário:";
             txtUsuario.Size = new Size(207, 23);
             txtUsuario.TabIndex = 0;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(32, 145);
+            txtSenha.Location = new Point(53, 216);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.PlaceholderText = "Senha";
             txtSenha.Size = new Size(207, 23);
             txtSenha.TabIndex = 1;
             // 
             // btnLogin
             // 
+            btnLogin.BackColor = Color.SlateBlue;
+            btnLogin.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
+            btnLogin.FlatAppearance.BorderSize = 2;
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = Color.DarkSlateBlue;
-            btnLogin.Location = new Point(66, 189);
+            btnLogin.ForeColor = Color.Lavender;
+            btnLogin.Location = new Point(92, 260);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(132, 25);
+            btnLogin.Size = new Size(129, 30);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.DarkSlateBlue;
+            label3.Location = new Point(53, 135);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 16);
+            label3.TabIndex = 5;
+            label3.Text = "Usuário:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.DarkSlateBlue;
+            label4.Location = new Point(53, 197);
+            label4.Name = "label4";
+            label4.Size = new Size(49, 16);
+            label4.TabIndex = 5;
+            label4.Text = "Senha:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(108, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Cascadia Code", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Lavender;
-            label1.Location = new Point(46, 33);
+            label1.ForeColor = Color.DarkSlateBlue;
+            label1.Location = new Point(103, 304);
             label1.Name = "label1";
-            label1.Size = new Size(171, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Seja bem-vindo(a)!";
-            label1.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Cascadia Code", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Lavender;
-            label2.Location = new Point(68, 53);
-            label2.Name = "label2";
-            label2.Size = new Size(128, 17);
-            label2.TabIndex = 4;
-            label2.Text = "Faça seu Login:";
+            label1.Size = new Size(105, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Esqueceu a senha?";
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSlateBlue;
-            ClientSize = new Size(263, 251);
-            Controls.Add(label2);
+            BackColor = Color.Lavender;
+            ClientSize = new Size(314, 352);
             Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(btnLogin);
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
@@ -107,6 +134,7 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,7 +144,9 @@
         private TextBox txtUsuario;
         private TextBox txtSenha;
         private Button btnLogin;
+        private Label label3;
+        private Label label4;
+        private PictureBox pictureBox1;
         private Label label1;
-        private Label label2;
     }
 }

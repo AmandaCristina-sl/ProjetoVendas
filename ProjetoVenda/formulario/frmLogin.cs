@@ -19,7 +19,7 @@ namespace ProjetoVenda.formulario
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
 
             string usuario = this.txtUsuario.Text;
             string senha = this.txtSenha.Text;
@@ -33,9 +33,9 @@ namespace ProjetoVenda.formulario
             else
             {
                 MessageBox.Show(
-                    "Usuário ou senha incorretos", 
-                    "ERRO NO LOGIN", 
-                    MessageBoxButtons.OK, 
+                    "Usuário ou senha incorretos",
+                    "ERRO NO LOGIN",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                     );
             }

@@ -32,6 +32,10 @@ namespace ProjetoVenda.formulario
                 this.btnCadFuncionario.Visible = false;
             }
 
+            controller = new FuncionarioControle();
+            Funcionario? funcionario = controller.usuarioAutenticado();
+            this.lblUsername.Text = funcionario.nome;
+
         }
 
         private void exibirFormulario(Form formulario)

@@ -33,6 +33,7 @@
             btnCadFuncionario = new Button();
             btnCadastrarProduto = new Button();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             btnCadastroVenda = new Button();
             btnPerfilUsuario = new Button();
             btnSair = new Button();
@@ -40,70 +41,99 @@
             lblTitulo = new Label();
             painelPrincipal = new Panel();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblUsername
             // 
-            lblUsername.AutoSize = true;
-            lblUsername.BackColor = SystemColors.ButtonFace;
-            lblUsername.Location = new Point(130, 97);
+            lblUsername.BackColor = Color.GhostWhite;
+            lblUsername.Font = new Font("Microsoft JhengHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsername.Location = new Point(85, 22);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(99, 15);
+            lblUsername.Size = new Size(127, 19);
             lblUsername.TabIndex = 0;
             lblUsername.Text = "Nome do usuário";
+            lblUsername.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnCadFuncionario
             // 
-            btnCadFuncionario.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadFuncionario.Location = new Point(12, 240);
+            btnCadFuncionario.BackColor = Color.DarkSlateBlue;
+            btnCadFuncionario.FlatAppearance.BorderColor = Color.FromArgb(128, 128, 255);
+            btnCadFuncionario.FlatAppearance.BorderSize = 3;
+            btnCadFuncionario.FlatStyle = FlatStyle.Flat;
+            btnCadFuncionario.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadFuncionario.ForeColor = Color.Lavender;
+            btnCadFuncionario.Location = new Point(21, 296);
             btnCadFuncionario.Name = "btnCadFuncionario";
-            btnCadFuncionario.Size = new Size(328, 83);
+            btnCadFuncionario.Size = new Size(213, 50);
             btnCadFuncionario.TabIndex = 2;
             btnCadFuncionario.Text = "Cadastrar Funcionário";
-            btnCadFuncionario.UseVisualStyleBackColor = true;
+            btnCadFuncionario.UseVisualStyleBackColor = false;
             btnCadFuncionario.Click += btnCadFuncionario_Click;
             // 
             // btnCadastrarProduto
             // 
-            btnCadastrarProduto.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrarProduto.Location = new Point(12, 147);
+            btnCadastrarProduto.BackColor = Color.DarkSlateBlue;
+            btnCadastrarProduto.FlatAppearance.BorderColor = Color.MediumSlateBlue;
+            btnCadastrarProduto.FlatAppearance.BorderSize = 3;
+            btnCadastrarProduto.FlatStyle = FlatStyle.Flat;
+            btnCadastrarProduto.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastrarProduto.ForeColor = Color.Lavender;
+            btnCadastrarProduto.Location = new Point(21, 213);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
-            btnCadastrarProduto.Size = new Size(328, 87);
+            btnCadastrarProduto.Size = new Size(213, 50);
             btnCadastrarProduto.TabIndex = 1;
             btnCadastrarProduto.Text = "Cadastrar Produto";
-            btnCadastrarProduto.UseVisualStyleBackColor = true;
+            btnCadastrarProduto.UseVisualStyleBackColor = false;
             btnCadastrarProduto.Click += btnCadastrarProduto_Click;
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnCadastroVenda);
             panel2.Controls.Add(btnPerfilUsuario);
             panel2.Controls.Add(btnSair);
             panel2.Controls.Add(btnCadastrarProduto);
             panel2.Controls.Add(btnCadFuncionario);
             panel2.Controls.Add(lblUsername);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(764, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(352, 862);
+            panel2.Size = new Size(246, 862);
             panel2.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(21, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(58, 59);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // btnCadastroVenda
             // 
-            btnCadastroVenda.Location = new Point(12, 338);
+            btnCadastroVenda.BackColor = Color.DarkSlateBlue;
+            btnCadastroVenda.FlatAppearance.BorderColor = Color.FromArgb(128, 128, 255);
+            btnCadastroVenda.FlatAppearance.BorderSize = 3;
+            btnCadastroVenda.FlatStyle = FlatStyle.Flat;
+            btnCadastroVenda.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastroVenda.ForeColor = Color.Lavender;
+            btnCadastroVenda.Location = new Point(21, 371);
             btnCadastroVenda.Name = "btnCadastroVenda";
-            btnCadastroVenda.Size = new Size(328, 65);
+            btnCadastroVenda.Size = new Size(213, 50);
             btnCadastroVenda.TabIndex = 3;
             btnCadastroVenda.Text = "Cadastrar Venda";
-            btnCadastroVenda.UseVisualStyleBackColor = true;
+            btnCadastroVenda.UseVisualStyleBackColor = false;
             btnCadastroVenda.Click += btnCadastroVenda_Click;
             // 
             // btnPerfilUsuario
             // 
-            btnPerfilUsuario.Location = new Point(50, 640);
+            btnPerfilUsuario.Location = new Point(85, 44);
             btnPerfilUsuario.Name = "btnPerfilUsuario";
-            btnPerfilUsuario.Size = new Size(224, 23);
+            btnPerfilUsuario.Size = new Size(127, 37);
             btnPerfilUsuario.TabIndex = 4;
             btnPerfilUsuario.Text = "Perfil do Usuário";
             btnPerfilUsuario.UseVisualStyleBackColor = true;
@@ -111,9 +141,9 @@
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(18, 669);
+            btnSair.Location = new Point(35, 811);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(301, 63);
+            btnSair.Size = new Size(186, 27);
             btnSair.TabIndex = 5;
             btnSair.Text = "Sair do Sistema";
             btnSair.UseVisualStyleBackColor = true;
@@ -123,28 +153,29 @@
             // 
             panel1.Controls.Add(lblTitulo);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(352, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(658, 112);
+            panel1.Size = new Size(764, 112);
             panel1.TabIndex = 4;
             // 
             // lblTitulo
             // 
-            lblTitulo.Dock = DockStyle.Fill;
-            lblTitulo.Font = new Font("Cascadia Code", 27.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTitulo.Font = new Font("Microsoft JhengHei UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.DarkSlateBlue;
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(658, 112);
+            lblTitulo.Size = new Size(764, 112);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Título da tela";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // painelPrincipal
             // 
-            painelPrincipal.Location = new Point(352, 112);
+            painelPrincipal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            painelPrincipal.Location = new Point(0, 112);
             painelPrincipal.Name = "painelPrincipal";
-            painelPrincipal.Size = new Size(658, 750);
+            painelPrincipal.Size = new Size(764, 750);
             painelPrincipal.TabIndex = 5;
             // 
             // frmPrincipal
@@ -162,7 +193,7 @@
             Text = "Tela Inicial";
             Load += frmPrincipal_Load;
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -179,5 +210,6 @@
         private Button btnPerfilUsuario;
         private Button btnCadastroVenda;
         private Label lblTitulo;
+        private PictureBox pictureBox1;
     }
 }

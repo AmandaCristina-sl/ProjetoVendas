@@ -59,6 +59,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.6.2, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2026.9.2, )"
             }
           },
           "imports": [

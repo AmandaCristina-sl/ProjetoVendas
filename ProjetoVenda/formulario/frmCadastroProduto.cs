@@ -73,14 +73,14 @@ namespace ProjetoVenda.formulario
                         MessageBoxIcon.Error
                     );
             }
-            
+
         }
 
         private void frmCadastroProduto_Load(object sender, EventArgs e)
         {
             this.cbxQuantidadeItens.SelectedIndex = 0;
             carregarProdutos();
-            
+
         }
 
         private void carregarProdutos()
@@ -192,11 +192,6 @@ namespace ProjetoVenda.formulario
                     );
             }
 
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
 
         }
 
