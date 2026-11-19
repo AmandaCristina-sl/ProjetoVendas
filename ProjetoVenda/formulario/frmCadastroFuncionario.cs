@@ -27,7 +27,7 @@ namespace ProjetoVenda.formulario
             controller = new FuncionarioControle();
         }
 
-       
+
 
         private void limparCampos()
         {
@@ -55,7 +55,7 @@ namespace ProjetoVenda.formulario
             string senha = this.txtSenha.Text;
             string senha1 = this.txtConfirmarSenha.Text;
 
-            bool adm = (this.cbxAdm.SelectedIndex == 0)? false : true; //ternário
+            bool adm = (this.cbxAdm.SelectedIndex == 0) ? false : true; //ternário
 
             if (senha != senha1)
             {
@@ -81,7 +81,7 @@ namespace ProjetoVenda.formulario
                 senha = senha,
                 adm = adm
             };
-            
+
             bool resp = controller.criarFuncionario(funcionario);
 
             if (resp)
@@ -112,15 +112,15 @@ namespace ProjetoVenda.formulario
             List<Funcionario> list = controller.listarFuncionarios();
             dgvFuncionario.DataSource = list;
             this.dgvFuncionario.Columns["senha"].Visible = false;
-           
+
         }
 
         private void frmCadastroFuncionario_Load(object sender, EventArgs e)
         {
-         
-              carregarFuncionario();
-              this.cbxAdm.SelectedIndex = 0;
-            
+
+            carregarFuncionario();
+            this.cbxAdm.SelectedIndex = 0;
+
 
         }
     }

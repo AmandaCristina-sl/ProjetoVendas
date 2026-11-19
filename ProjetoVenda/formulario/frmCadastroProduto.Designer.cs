@@ -29,72 +29,199 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroProduto));
-            txtNome = new TextBox();
-            txtMarca = new TextBox();
-            txtPreco = new TextBox();
-            txtQuantidade = new NumericUpDown();
-            btnCadastroProduto = new Button();
-            dgvProdutos = new DataGridView();
-            btnAtualizar = new Button();
-            btnExcluir = new Button();
-            btnAnterior = new Button();
-            btnProximo = new Button();
-            lblPaginas = new Label();
-            cbxQuantidadeItens = new ComboBox();
-            label2 = new Label();
-            groupBox1 = new GroupBox();
+            panelProduto = new Panel();
             label5 = new Label();
+            label2 = new Label();
+            cbxQuantidadeItens = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
+            txtQuantidade = new NumericUpDown();
+            txtPreco = new TextBox();
+            txtMarca = new TextBox();
+            btnExcluir = new Button();
+            txtNome = new TextBox();
+            btnAtualizar = new Button();
+            btnCadastroProduto = new Button();
+            dgvProdutos = new DataGridView();
+            tbpProduto = new TableLayoutPanel();
+            panelProdutoBaixo = new Panel();
+            btnAnterior = new Button();
+            lblPaginas = new Label();
+            btnProximo = new Button();
+            panelProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
-            groupBox1.SuspendLayout();
+            tbpProduto.SuspendLayout();
+            panelProdutoBaixo.SuspendLayout();
             SuspendLayout();
+            // 
+            // panelProduto
+            // 
+            panelProduto.Controls.Add(label5);
+            panelProduto.Controls.Add(label2);
+            panelProduto.Controls.Add(cbxQuantidadeItens);
+            panelProduto.Controls.Add(label4);
+            panelProduto.Controls.Add(label3);
+            panelProduto.Controls.Add(label1);
+            panelProduto.Controls.Add(txtQuantidade);
+            panelProduto.Controls.Add(txtPreco);
+            panelProduto.Controls.Add(txtMarca);
+            panelProduto.Controls.Add(btnExcluir);
+            panelProduto.Controls.Add(txtNome);
+            panelProduto.Controls.Add(btnAtualizar);
+            panelProduto.Controls.Add(btnCadastroProduto);
+            panelProduto.Dock = DockStyle.Fill;
+            panelProduto.Location = new Point(3, 3);
+            panelProduto.Name = "panelProduto";
+            panelProduto.Size = new Size(769, 244);
+            panelProduto.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Franklin Gothic Heavy", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DarkSlateBlue;
+            label5.Location = new Point(9, 155);
+            label5.Name = "label5";
+            label5.Size = new Size(95, 20);
+            label5.TabIndex = 21;
+            label5.Text = "Quantidade:";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Left;
+            label2.BackColor = Color.DarkSlateBlue;
+            label2.Font = new Font("Franklin Gothic Demi", 9.5F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Lavender;
+            label2.Location = new Point(9, 199);
+            label2.Name = "label2";
+            label2.Size = new Size(134, 17);
+            label2.TabIndex = 12;
+            label2.Text = "Número de linhas:";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // cbxQuantidadeItens
+            // 
+            cbxQuantidadeItens.Anchor = AnchorStyles.Left;
+            cbxQuantidadeItens.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxQuantidadeItens.FormattingEnabled = true;
+            cbxQuantidadeItens.Items.AddRange(new object[] { "25", "35", "50", "100" });
+            cbxQuantidadeItens.Location = new Point(9, 219);
+            cbxQuantidadeItens.Name = "cbxQuantidadeItens";
+            cbxQuantidadeItens.Size = new Size(134, 23);
+            cbxQuantidadeItens.TabIndex = 11;
+            cbxQuantidadeItens.SelectedIndexChanged += cbxQuantidadeItens_SelectedIndexChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Franklin Gothic Heavy", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.DarkSlateBlue;
+            label4.Location = new Point(15, 112);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 20);
+            label4.TabIndex = 22;
+            label4.Text = "Preço:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Franklin Gothic Heavy", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.DarkSlateBlue;
+            label3.Location = new Point(15, 68);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 20);
+            label3.TabIndex = 23;
+            label3.Text = "Marca:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Franklin Gothic Heavy", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DarkSlateBlue;
+            label1.Location = new Point(9, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 20);
+            label1.TabIndex = 24;
+            label1.Text = "Descrição:";
+            // 
+            // txtQuantidade
+            // 
+            txtQuantidade.Anchor = AnchorStyles.Left;
+            txtQuantidade.Font = new Font("Microsoft JhengHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtQuantidade.Location = new Point(110, 155);
+            txtQuantidade.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            txtQuantidade.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.Size = new Size(152, 24);
+            txtQuantidade.TabIndex = 17;
+            // 
+            // txtPreco
+            // 
+            txtPreco.Anchor = AnchorStyles.Left;
+            txtPreco.Font = new Font("Microsoft JhengHei UI", 9.5F);
+            txtPreco.Location = new Point(79, 112);
+            txtPreco.Name = "txtPreco";
+            txtPreco.PlaceholderText = "R$ 000.000,00";
+            txtPreco.Size = new Size(152, 24);
+            txtPreco.TabIndex = 16;
+            // 
+            // txtMarca
+            // 
+            txtMarca.Anchor = AnchorStyles.Left;
+            txtMarca.Font = new Font("Microsoft JhengHei UI", 9.5F);
+            txtMarca.Location = new Point(79, 68);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(376, 24);
+            txtMarca.TabIndex = 15;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Anchor = AnchorStyles.Right;
+            btnExcluir.Enabled = false;
+            btnExcluir.Font = new Font("Franklin Gothic Medium", 11.25F);
+            btnExcluir.ForeColor = Color.DarkSlateBlue;
+            btnExcluir.Location = new Point(543, 126);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(139, 39);
+            btnExcluir.TabIndex = 20;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // txtNome
             // 
             txtNome.Font = new Font("Microsoft JhengHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(9, 41);
+            txtNome.Location = new Point(99, 26);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(383, 24);
-            txtNome.TabIndex = 0;
+            txtNome.Size = new Size(376, 24);
+            txtNome.TabIndex = 14;
             // 
-            // txtMarca
+            // btnAtualizar
             // 
-            txtMarca.Font = new Font("Microsoft JhengHei UI", 9.5F);
-            txtMarca.Location = new Point(9, 94);
-            txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(383, 24);
-            txtMarca.TabIndex = 1;
-            // 
-            // txtPreco
-            // 
-            txtPreco.Font = new Font("Microsoft JhengHei UI", 9.5F);
-            txtPreco.Location = new Point(9, 149);
-            txtPreco.Name = "txtPreco";
-            txtPreco.PlaceholderText = "R$ 000.000,00";
-            txtPreco.Size = new Size(159, 24);
-            txtPreco.TabIndex = 2;
-            // 
-            // txtQuantidade
-            // 
-            txtQuantidade.Font = new Font("Microsoft JhengHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtQuantidade.Location = new Point(9, 209);
-            txtQuantidade.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
-            txtQuantidade.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
-            txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(159, 24);
-            txtQuantidade.TabIndex = 3;
+            btnAtualizar.Anchor = AnchorStyles.Right;
+            btnAtualizar.Enabled = false;
+            btnAtualizar.Font = new Font("Franklin Gothic Medium", 11.25F);
+            btnAtualizar.ForeColor = Color.DarkSlateBlue;
+            btnAtualizar.Location = new Point(543, 68);
+            btnAtualizar.Name = "btnAtualizar";
+            btnAtualizar.Size = new Size(139, 39);
+            btnAtualizar.TabIndex = 19;
+            btnAtualizar.Text = "Atualizar";
+            btnAtualizar.UseMnemonic = false;
+            btnAtualizar.UseVisualStyleBackColor = true;
+            btnAtualizar.Click += btnAtualizar_Click;
             // 
             // btnCadastroProduto
             // 
+            btnCadastroProduto.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCadastroProduto.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastroProduto.ForeColor = Color.DarkSlateBlue;
-            btnCadastroProduto.Location = new Point(540, 36);
+            btnCadastroProduto.Location = new Point(543, 18);
             btnCadastroProduto.Name = "btnCadastroProduto";
-            btnCadastroProduto.Size = new Size(123, 55);
-            btnCadastroProduto.TabIndex = 4;
+            btnCadastroProduto.Size = new Size(139, 39);
+            btnCadastroProduto.TabIndex = 18;
             btnCadastroProduto.Text = "Cadastrar Produto";
             btnCadastroProduto.UseVisualStyleBackColor = true;
             btnCadastroProduto.Click += btnCadastroProduto_Click;
@@ -103,211 +230,130 @@
             // 
             dgvProdutos.AllowUserToAddRows = false;
             dgvProdutos.AllowUserToDeleteRows = false;
+            dgvProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProdutos.BackgroundColor = SystemColors.WindowFrame;
+            dgvProdutos.BackgroundColor = Color.GhostWhite;
             dgvProdutos.BorderStyle = BorderStyle.Fixed3D;
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProdutos.Location = new Point(22, 312);
+            dgvProdutos.Location = new Point(18, 265);
+            dgvProdutos.Margin = new Padding(18, 15, 15, 18);
             dgvProdutos.MultiSelect = false;
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.ReadOnly = true;
             dgvProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProdutos.Size = new Size(633, 374);
-            dgvProdutos.TabIndex = 5;
-            dgvProdutos.CellContentDoubleClick += dgvProdutos_CellContentDoubleClick;
+            dgvProdutos.Size = new Size(742, 395);
+            dgvProdutos.TabIndex = 6;
             dgvProdutos.CellDoubleClick += dgvProdutos_CellDoubleClick;
             // 
-            // btnAtualizar
+            // tbpProduto
             // 
-            btnAtualizar.Enabled = false;
-            btnAtualizar.Font = new Font("Franklin Gothic Medium", 11.25F);
-            btnAtualizar.ForeColor = Color.DarkSlateBlue;
-            btnAtualizar.Location = new Point(540, 106);
-            btnAtualizar.Name = "btnAtualizar";
-            btnAtualizar.Size = new Size(123, 52);
-            btnAtualizar.TabIndex = 6;
-            btnAtualizar.Text = "Atualizar";
-            btnAtualizar.UseMnemonic = false;
-            btnAtualizar.UseVisualStyleBackColor = true;
-            btnAtualizar.Click += btnAtualizar_Click;
+            tbpProduto.ColumnCount = 1;
+            tbpProduto.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tbpProduto.Controls.Add(panelProdutoBaixo, 0, 2);
+            tbpProduto.Controls.Add(dgvProdutos, 0, 1);
+            tbpProduto.Controls.Add(panelProduto, 0, 0);
+            tbpProduto.Dock = DockStyle.Fill;
+            tbpProduto.Location = new Point(0, 0);
+            tbpProduto.Name = "tbpProduto";
+            tbpProduto.RowCount = 3;
+            tbpProduto.RowStyles.Add(new RowStyle(SizeType.Absolute, 250F));
+            tbpProduto.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tbpProduto.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tbpProduto.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tbpProduto.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tbpProduto.Size = new Size(775, 758);
+            tbpProduto.TabIndex = 13;
             // 
-            // btnExcluir
+            // panelProdutoBaixo
             // 
-            btnExcluir.Enabled = false;
-            btnExcluir.Font = new Font("Franklin Gothic Medium", 11.25F);
-            btnExcluir.ForeColor = Color.DarkSlateBlue;
-            btnExcluir.Location = new Point(540, 170);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(123, 52);
-            btnExcluir.TabIndex = 7;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
-            btnExcluir.Click += btnExcluir_Click;
+            panelProdutoBaixo.BackColor = Color.DarkSlateBlue;
+            panelProdutoBaixo.Controls.Add(btnAnterior);
+            panelProdutoBaixo.Controls.Add(lblPaginas);
+            panelProdutoBaixo.Controls.Add(btnProximo);
+            panelProdutoBaixo.Dock = DockStyle.Fill;
+            panelProdutoBaixo.Location = new Point(3, 681);
+            panelProdutoBaixo.Name = "panelProdutoBaixo";
+            panelProdutoBaixo.Size = new Size(769, 74);
+            panelProdutoBaixo.TabIndex = 7;
             // 
             // btnAnterior
             // 
             btnAnterior.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAnterior.ForeColor = Color.DarkSlateBlue;
-            btnAnterior.Location = new Point(22, 698);
+            btnAnterior.Location = new Point(15, 22);
             btnAnterior.Name = "btnAnterior";
-            btnAnterior.Size = new Size(117, 39);
-            btnAnterior.TabIndex = 8;
+            btnAnterior.Size = new Size(123, 31);
+            btnAnterior.TabIndex = 16;
             btnAnterior.Text = "<- Anterior";
             btnAnterior.UseVisualStyleBackColor = true;
             btnAnterior.Click += btnAnterior_Click;
             // 
-            // btnProximo
-            // 
-            btnProximo.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnProximo.ForeColor = Color.DarkSlateBlue;
-            btnProximo.Location = new Point(538, 698);
-            btnProximo.Name = "btnProximo";
-            btnProximo.Size = new Size(117, 39);
-            btnProximo.TabIndex = 9;
-            btnProximo.Text = "Próximo ->";
-            btnProximo.UseVisualStyleBackColor = true;
-            btnProximo.Click += btnProximo_Click;
-            // 
             // lblPaginas
             // 
+            lblPaginas.Anchor = AnchorStyles.Top;
             lblPaginas.Font = new Font("Cascadia Code SemiLight", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPaginas.ForeColor = Color.DarkSlateBlue;
-            lblPaginas.Location = new Point(154, 700);
+            lblPaginas.ForeColor = Color.Lavender;
+            lblPaginas.Location = new Point(206, 20);
             lblPaginas.Name = "lblPaginas";
-            lblPaginas.Size = new Size(358, 33);
+            lblPaginas.Size = new Size(384, 33);
             lblPaginas.TabIndex = 10;
             lblPaginas.Text = "Página: 1 de 5";
             lblPaginas.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // cbxQuantidadeItens
+            // btnProximo
             // 
-            cbxQuantidadeItens.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxQuantidadeItens.FormattingEnabled = true;
-            cbxQuantidadeItens.Items.AddRange(new object[] { "25", "35", "50", "100" });
-            cbxQuantidadeItens.Location = new Point(22, 283);
-            cbxQuantidadeItens.Name = "cbxQuantidadeItens";
-            cbxQuantidadeItens.Size = new Size(126, 23);
-            cbxQuantidadeItens.TabIndex = 11;
-            cbxQuantidadeItens.SelectedIndexChanged += cbxQuantidadeItens_SelectedIndexChanged;
-            // 
-            // label2
-            // 
-            label2.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.DarkSlateBlue;
-            label2.Location = new Point(22, 264);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 16);
-            label2.TabIndex = 12;
-            label2.Text = "Número de linhas:";
-            label2.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(txtQuantidade);
-            groupBox1.Controls.Add(txtPreco);
-            groupBox1.Controls.Add(txtMarca);
-            groupBox1.Controls.Add(txtNome);
-            groupBox1.ForeColor = SystemColors.ActiveCaptionText;
-            groupBox1.Location = new Point(22, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(501, 249);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Franklin Gothic Demi", 9.75F, FontStyle.Italic);
-            label5.ForeColor = Color.DarkSlateBlue;
-            label5.Location = new Point(9, 187);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 17);
-            label5.TabIndex = 13;
-            label5.Text = "Quantidade";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Franklin Gothic Demi", 9.75F, FontStyle.Italic);
-            label4.ForeColor = Color.DarkSlateBlue;
-            label4.Location = new Point(9, 129);
-            label4.Name = "label4";
-            label4.Size = new Size(45, 17);
-            label4.TabIndex = 13;
-            label4.Text = "Preço:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Franklin Gothic Demi", 9.75F, FontStyle.Italic);
-            label3.ForeColor = Color.DarkSlateBlue;
-            label3.Location = new Point(9, 74);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 17);
-            label3.TabIndex = 13;
-            label3.Text = "Marca:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Franklin Gothic Demi", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkSlateBlue;
-            label1.Location = new Point(9, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 17);
-            label1.TabIndex = 13;
-            label1.Text = "Descrição:";
+            btnProximo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnProximo.Font = new Font("Cascadia Code SemiLight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProximo.ForeColor = Color.DarkSlateBlue;
+            btnProximo.Location = new Point(643, 22);
+            btnProximo.Name = "btnProximo";
+            btnProximo.Size = new Size(123, 31);
+            btnProximo.TabIndex = 10;
+            btnProximo.Text = "Próximo ->";
+            btnProximo.UseVisualStyleBackColor = true;
+            btnProximo.Click += btnProximo_Click;
             // 
             // frmCadastroProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lavender;
-            ClientSize = new Size(681, 758);
-            Controls.Add(label2);
-            Controls.Add(cbxQuantidadeItens);
-            Controls.Add(lblPaginas);
-            Controls.Add(btnProximo);
-            Controls.Add(btnAnterior);
-            Controls.Add(btnExcluir);
-            Controls.Add(btnAtualizar);
-            Controls.Add(dgvProdutos);
-            Controls.Add(btnCadastroProduto);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(775, 758);
+            Controls.Add(tbpProduto);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadastroProduto";
             Text = "Cadastro de Produtos";
             Load += frmCadastroProduto_Load;
+            panelProduto.ResumeLayout(false);
+            panelProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            tbpProduto.ResumeLayout(false);
+            panelProdutoBaixo.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TextBox txtNome;
-        private TextBox txtMarca;
-        private TextBox txtPreco;
-        private NumericUpDown txtQuantidade;
-        private Button btnCadastroProduto;
-        private DataGridView dgvProdutos;
-        private Button btnAtualizar;
-        private Button btnExcluir;
-        private Button btnAnterior;
-        private Button btnProximo;
-        private Label lblPaginas;
-        private ComboBox cbxQuantidadeItens;
+        private Panel panelProduto;
+        private Label label5;
         private Label label2;
-        private GroupBox groupBox1;
+        private ComboBox cbxQuantidadeItens;
         private Label label4;
         private Label label3;
         private Label label1;
-        private Label label5;
+        private NumericUpDown txtQuantidade;
+        private TextBox txtPreco;
+        private TextBox txtMarca;
+        private Button btnExcluir;
+        private TextBox txtNome;
+        private Button btnAtualizar;
+        private Button btnCadastroProduto;
+        private DataGridView dgvProdutos;
+        private TableLayoutPanel tbpProduto;
+        private Panel panelProdutoBaixo;
+        private Button btnAnterior;
+        private Label lblPaginas;
+        private Button btnProximo;
     }
 }
