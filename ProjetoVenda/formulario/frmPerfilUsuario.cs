@@ -32,7 +32,7 @@ namespace ProjetoVenda.formulario
         {
             funcionario = controller.usuarioAutenticado();
 
-            if (funcionario != null )
+            if (funcionario != null)
             {
                 carregarDados();
             }

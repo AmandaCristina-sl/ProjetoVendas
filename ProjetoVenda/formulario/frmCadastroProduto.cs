@@ -74,6 +74,9 @@ namespace ProjetoVenda.formulario
                     );
             }
 
+            this.btnAtualizar.Enabled = false;
+            this.btnExcluir.Enabled = false;
+
         }
 
         private void frmCadastroProduto_Load(object sender, EventArgs e)

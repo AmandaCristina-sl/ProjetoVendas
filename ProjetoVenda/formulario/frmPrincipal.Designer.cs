@@ -64,27 +64,34 @@
             btnCadFuncionario.FlatStyle = FlatStyle.Flat;
             btnCadFuncionario.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadFuncionario.ForeColor = Color.Lavender;
+            btnCadFuncionario.Image = Properties.Resources.funcionariosCad;
+            btnCadFuncionario.ImageAlign = ContentAlignment.MiddleLeft;
             btnCadFuncionario.Location = new Point(105, 304);
             btnCadFuncionario.Name = "btnCadFuncionario";
             btnCadFuncionario.Size = new Size(213, 50);
             btnCadFuncionario.TabIndex = 2;
             btnCadFuncionario.Text = "Cadastrar Funcionário";
+            btnCadFuncionario.TextAlign = ContentAlignment.MiddleRight;
             btnCadFuncionario.UseVisualStyleBackColor = false;
             btnCadFuncionario.Click += btnCadFuncionario_Click;
             // 
             // btnCadastrarProduto
             // 
             btnCadastrarProduto.BackColor = Color.DarkSlateBlue;
+            btnCadastrarProduto.BackgroundImageLayout = ImageLayout.Zoom;
             btnCadastrarProduto.FlatAppearance.BorderColor = Color.MediumSlateBlue;
             btnCadastrarProduto.FlatAppearance.BorderSize = 3;
             btnCadastrarProduto.FlatStyle = FlatStyle.Flat;
             btnCadastrarProduto.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrarProduto.ForeColor = Color.Lavender;
+            btnCadastrarProduto.Image = Properties.Resources.Produtos__2_;
+            btnCadastrarProduto.ImageAlign = ContentAlignment.MiddleLeft;
             btnCadastrarProduto.Location = new Point(105, 221);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
-            btnCadastrarProduto.Size = new Size(213, 50);
+            btnCadastrarProduto.Size = new Size(213, 49);
             btnCadastrarProduto.TabIndex = 1;
             btnCadastrarProduto.Text = "Cadastrar Produto";
+            btnCadastrarProduto.TextAlign = ContentAlignment.MiddleRight;
             btnCadastrarProduto.UseVisualStyleBackColor = false;
             btnCadastrarProduto.Click += btnCadastrarProduto_Click;
             // 
@@ -107,7 +114,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.funcionario__2_;
             pictureBox1.Location = new Point(67, 29);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(58, 59);
@@ -123,11 +130,14 @@
             btnCadastroVenda.FlatStyle = FlatStyle.Flat;
             btnCadastroVenda.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastroVenda.ForeColor = Color.Lavender;
+            btnCadastroVenda.Image = Properties.Resources.vendas;
+            btnCadastroVenda.ImageAlign = ContentAlignment.MiddleLeft;
             btnCadastroVenda.Location = new Point(105, 379);
             btnCadastroVenda.Name = "btnCadastroVenda";
             btnCadastroVenda.Size = new Size(213, 50);
             btnCadastroVenda.TabIndex = 3;
             btnCadastroVenda.Text = "Cadastrar Venda";
+            btnCadastroVenda.TextAlign = ContentAlignment.MiddleRight;
             btnCadastroVenda.UseVisualStyleBackColor = false;
             btnCadastroVenda.Click += btnCadastroVenda_Click;
             // 
@@ -143,11 +153,14 @@
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(113, 876);
+            btnSair.Image = Properties.Resources.sair;
+            btnSair.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSair.Location = new Point(131, 873);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(186, 27);
+            btnSair.Size = new Size(145, 37);
             btnSair.TabIndex = 5;
             btnSair.Text = "Sair do Sistema";
+            btnSair.TextAlign = ContentAlignment.MiddleRight;
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
             // 

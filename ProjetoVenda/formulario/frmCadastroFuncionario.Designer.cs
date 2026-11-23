@@ -39,6 +39,9 @@
             txtSenha = new TextBox();
             txtUsuario = new TextBox();
             panelEsquerdoFuncio = new Panel();
+            lblCepFunci = new Label();
+            lblTelefoneFun = new Label();
+            lblNomeFuncio = new Label();
             label1 = new Label();
             txtNumero = new TextBox();
             txtComplemento = new TextBox();
@@ -46,9 +49,12 @@
             txtRua = new TextBox();
             txtTelefone = new TextBox();
             txtNome = new TextBox();
-            lblNomeFuncio = new Label();
-            lblTelefoneFun = new Label();
-            lblCepFunci = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFuncionario).BeginInit();
             panelFundoFunci.SuspendLayout();
@@ -100,6 +106,9 @@
             panelDireitoFuncio.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panelDireitoFuncio.Controls.Add(cbxAdm);
             panelDireitoFuncio.Controls.Add(txtConfirmarSenha);
+            panelDireitoFuncio.Controls.Add(label7);
+            panelDireitoFuncio.Controls.Add(label6);
+            panelDireitoFuncio.Controls.Add(label5);
             panelDireitoFuncio.Controls.Add(btnCadastrar);
             panelDireitoFuncio.Controls.Add(txtSenha);
             panelDireitoFuncio.Controls.Add(txtUsuario);
@@ -124,7 +133,6 @@
             txtConfirmarSenha.Location = new Point(71, 136);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.PasswordChar = '*';
-            txtConfirmarSenha.PlaceholderText = "Confirmar senha";
             txtConfirmarSenha.Size = new Size(232, 23);
             txtConfirmarSenha.TabIndex = 16;
             // 
@@ -145,7 +153,6 @@
             txtSenha.Location = new Point(71, 93);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.PlaceholderText = "Senha";
             txtSenha.Size = new Size(232, 23);
             txtSenha.TabIndex = 15;
             // 
@@ -153,13 +160,15 @@
             // 
             txtUsuario.Location = new Point(71, 49);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.PlaceholderText = "Usuário";
             txtUsuario.Size = new Size(232, 23);
             txtUsuario.TabIndex = 14;
             // 
             // panelEsquerdoFuncio
             // 
             panelEsquerdoFuncio.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            panelEsquerdoFuncio.Controls.Add(label4);
+            panelEsquerdoFuncio.Controls.Add(label3);
+            panelEsquerdoFuncio.Controls.Add(label2);
             panelEsquerdoFuncio.Controls.Add(lblCepFunci);
             panelEsquerdoFuncio.Controls.Add(lblTelefoneFun);
             panelEsquerdoFuncio.Controls.Add(lblNomeFuncio);
@@ -174,6 +183,36 @@
             panelEsquerdoFuncio.Name = "panelEsquerdoFuncio";
             panelEsquerdoFuncio.Size = new Size(365, 294);
             panelEsquerdoFuncio.TabIndex = 0;
+            // 
+            // lblCepFunci
+            // 
+            lblCepFunci.AutoSize = true;
+            lblCepFunci.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCepFunci.Location = new Point(143, 100);
+            lblCepFunci.Name = "lblCepFunci";
+            lblCepFunci.Size = new Size(30, 16);
+            lblCepFunci.TabIndex = 19;
+            lblCepFunci.Text = "CEP:";
+            // 
+            // lblTelefoneFun
+            // 
+            lblTelefoneFun.AutoSize = true;
+            lblTelefoneFun.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTelefoneFun.Location = new Point(9, 101);
+            lblTelefoneFun.Name = "lblTelefoneFun";
+            lblTelefoneFun.Size = new Size(52, 16);
+            lblTelefoneFun.TabIndex = 19;
+            lblTelefoneFun.Text = "Telefone:";
+            // 
+            // lblNomeFuncio
+            // 
+            lblNomeFuncio.AutoSize = true;
+            lblNomeFuncio.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNomeFuncio.Location = new Point(9, 57);
+            lblNomeFuncio.Name = "lblNomeFuncio";
+            lblNomeFuncio.Size = new Size(89, 16);
+            lblNomeFuncio.TabIndex = 19;
+            lblNomeFuncio.Text = "Nome Completo:";
             // 
             // label1
             // 
@@ -191,7 +230,6 @@
             // 
             txtNumero.Location = new Point(252, 116);
             txtNumero.Name = "txtNumero";
-            txtNumero.PlaceholderText = "Número";
             txtNumero.Size = new Size(107, 23);
             txtNumero.TabIndex = 15;
             // 
@@ -199,7 +237,6 @@
             // 
             txtComplemento.Location = new Point(9, 155);
             txtComplemento.Name = "txtComplemento";
-            txtComplemento.PlaceholderText = "Complemento";
             txtComplemento.Size = new Size(350, 23);
             txtComplemento.TabIndex = 16;
             // 
@@ -207,15 +244,13 @@
             // 
             txtCep.Location = new Point(143, 116);
             txtCep.Name = "txtCep";
-            txtCep.PlaceholderText = "Cep";
             txtCep.Size = new Size(107, 23);
             txtCep.TabIndex = 14;
             // 
             // txtRua
             // 
-            txtRua.Location = new Point(9, 193);
+            txtRua.Location = new Point(9, 200);
             txtRua.Name = "txtRua";
-            txtRua.PlaceholderText = "Rua";
             txtRua.Size = new Size(350, 23);
             txtRua.TabIndex = 17;
             // 
@@ -223,7 +258,6 @@
             // 
             txtTelefone.Location = new Point(9, 116);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.PlaceholderText = "Telefone";
             txtTelefone.Size = new Size(128, 23);
             txtTelefone.TabIndex = 13;
             // 
@@ -234,35 +268,65 @@
             txtNome.Size = new Size(350, 23);
             txtNome.TabIndex = 12;
             // 
-            // lblNomeFuncio
+            // label2
             // 
-            lblNomeFuncio.AutoSize = true;
-            lblNomeFuncio.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNomeFuncio.Location = new Point(9, 57);
-            lblNomeFuncio.Name = "lblNomeFuncio";
-            lblNomeFuncio.Size = new Size(89, 16);
-            lblNomeFuncio.TabIndex = 19;
-            lblNomeFuncio.Text = "Nome Completo:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(252, 101);
+            label2.Name = "label2";
+            label2.Size = new Size(49, 16);
+            label2.TabIndex = 19;
+            label2.Text = "Número:";
             // 
-            // lblTelefoneFun
+            // label3
             // 
-            lblTelefoneFun.AutoSize = true;
-            lblTelefoneFun.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTelefoneFun.Location = new Point(9, 101);
-            lblTelefoneFun.Name = "lblTelefoneFun";
-            lblTelefoneFun.Size = new Size(52, 16);
-            lblTelefoneFun.TabIndex = 19;
-            lblTelefoneFun.Text = "Telefone:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(9, 139);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 16);
+            label3.TabIndex = 19;
+            label3.Text = "Complemento:";
             // 
-            // lblCepFunci
+            // label4
             // 
-            lblCepFunci.AutoSize = true;
-            lblCepFunci.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCepFunci.Location = new Point(143, 100);
-            lblCepFunci.Name = "lblCepFunci";
-            lblCepFunci.Size = new Size(30, 16);
-            lblCepFunci.TabIndex = 19;
-            lblCepFunci.Text = "CEP:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(9, 181);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 16);
+            label4.TabIndex = 19;
+            label4.Text = "Rua:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(71, 30);
+            label5.Name = "label5";
+            label5.Size = new Size(47, 16);
+            label5.TabIndex = 19;
+            label5.Text = "Usuário:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(71, 75);
+            label6.Name = "label6";
+            label6.Size = new Size(41, 16);
+            label6.TabIndex = 19;
+            label6.Text = "Senha:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(71, 119);
+            label7.Name = "label7";
+            label7.Size = new Size(91, 16);
+            label7.TabIndex = 19;
+            label7.Text = "Confirmar senha:";
             // 
             // frmCadastroFuncionario
             // 
@@ -306,5 +370,11 @@
         private Label lblNomeFuncio;
         private Label lblCepFunci;
         private Label lblTelefoneFun;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label7;
+        private Label label6;
+        private Label label5;
     }
 }
