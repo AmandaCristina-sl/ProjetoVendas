@@ -14,14 +14,19 @@ namespace ProjetoVenda.formulario
     {
 
         private ProdutoControle produtoControle;
+        private Relatorio relatorio;
+
         private VendaControle vendaControle;
-        private List<Item> carrinho = new List<Item>(); // aqui de fato será a nosta lista de produtos do carrinho.
+        private List<Item> carrinho;
 
         public frmCadastroVenda()
         {
             InitializeComponent();
             produtoControle = new ProdutoControle();
             vendaControle = new VendaControle();
+            relatorio = new Relatorio();
+            carrinho = new List<Item>(); // aqui de fato será a nosta lista de produtos do carrinho
+
         }
 
         private void carregarProdutos()
@@ -172,6 +177,8 @@ namespace ProjetoVenda.formulario
                     carrinho.Clear();
                     frmCadastroVenda_Load(this, EventArgs.Empty);
                     MessageBox.Show("Venda Cadastrada com sucesso!!");
+                    // mostrar o "Cupom de vendas"!!
+                    relatorio.salvarPdf();
                 }
                 else
                 {

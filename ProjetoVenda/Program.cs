@@ -1,4 +1,6 @@
+using ProjetoVenda.controle;
 using ProjetoVenda.formulario;
+using QuestPDF.Infrastructure;
 
 namespace ProjetoVenda
 {
@@ -7,11 +9,18 @@ namespace ProjetoVenda
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// 
+
         [STAThread] 
         static void Main()
         {
+
+            QuestPDF.Settings.License = LicenseType.Community;
+
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmCadastroVenda());
+            //Relatorio relatorio = new Relatorio();
+            //relatorio.salvarPdf();
 
             while (true)
             {
