@@ -178,7 +178,9 @@ namespace ProjetoVenda.formulario
                     frmCadastroVenda_Load(this, EventArgs.Empty);
                     MessageBox.Show("Venda Cadastrada com sucesso!!");
                     // mostrar o "Cupom de vendas"!!
-                    relatorio.salvarPdf();
+                    var documento = relatorio.gerarNota(carrinho);
+                    relatorio.salvarPdf(documento);
+                    carrinho.Clear();
                 }
                 else
                 {

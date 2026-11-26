@@ -45,3 +45,9 @@ C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.
 C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\runtimes\win-x64\native\questpdf_skia.dll
 C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\runtimes\win-x86\native\questpdf_qpdf.dll
 C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\runtimes\win-x86\native\questpdf_skia.dll
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\DotNetEnv.dll
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\Superpower.dll
+C:\Users\amanda.cslopes2\source\repos\ProjetoVenda\ProjetoVenda\bin\Debug\net10.0-windows\.env

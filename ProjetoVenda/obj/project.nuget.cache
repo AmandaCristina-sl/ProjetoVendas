@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "RsdWRJjPEmo=",
+  "dgSpecHash": "syFPX4wfZCg=",
   "success": true,
   "projectFilePath": "C:\\Users\\amanda.cslopes2\\source\\repos\\ProjetoVenda\\ProjetoVenda\\ProjetoVenda.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\dotnetenv\\3.2.0\\dotnetenv.3.2.0.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\microsoft.extensions.configuration\\1.1.2\\microsoft.extensions.configuration.1.1.2.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\1.1.2\\microsoft.extensions.configuration.abstractions.1.1.2.nupkg.sha512",
     "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\microsoft.extensions.primitives\\1.1.1\\microsoft.extensions.primitives.1.1.1.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\mysqlconnector\\2.6.2\\mysqlconnector.2.6.2.nupkg.sha512",
-    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\questpdf\\2026.9.2\\questpdf.2026.9.2.nupkg.sha512"
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\questpdf\\2026.9.2\\questpdf.2026.9.2.nupkg.sha512",
+    "C:\\Users\\amanda.cslopes2\\.nuget\\packages\\superpower\\3.0.0\\superpower.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

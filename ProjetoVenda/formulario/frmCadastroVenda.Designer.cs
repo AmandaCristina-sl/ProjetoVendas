@@ -139,7 +139,7 @@
             cbxProdutos.FormattingEnabled = true;
             cbxProdutos.Location = new Point(15, 41);
             cbxProdutos.Name = "cbxProdutos";
-            cbxProdutos.Size = new Size(586, 23);
+            cbxProdutos.Size = new Size(639, 23);
             cbxProdutos.TabIndex = 5;
             cbxProdutos.Click += cbxProdutos_SelectedIndexChanged;
             // 

@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[4.2.0, )"
             },
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.6.2, )"
