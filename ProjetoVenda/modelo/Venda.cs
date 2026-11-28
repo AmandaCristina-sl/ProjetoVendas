@@ -12,7 +12,8 @@ namespace ProjetoVenda.modelo
 
 
 
-        public List<Item> itens {  get; set; }
+        public List<Item> itens { get; set; } = new List<Item>();
+        public decimal total => itens.Sum(i => i.subTotal);
         public string nomeFuncionario { get; set; }
 
     }

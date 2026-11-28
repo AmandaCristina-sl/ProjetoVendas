@@ -86,5 +86,70 @@ namespace ProjetoVenda.repositorio
             }
             
         }
+
+        public List<Venda> listarVendaMes(int mes, int ano)
+        {
+            DateTime dataInicial = new DateTime(ano, mes, 1);
+            DateTime dataFinal = dataInicial.AddMonths(1);
+
+            string sql = @"SELECT 
+	        venda.*,
+            funcionario.nome AS nome_funcionario,
+            itens.*,
+            produto.nome,
+            produto.marca
+             FROM venda
+            JOIN funcionario
+            ON funcionario.cod_funcionario = venda.cod_funcionario
+            JOIN itens
+            ON itens.cod_venda = venda.cod_venda
+            JOIN produto
+            ON produto.cod_produto = itens.cod_produto
+            WHERE venda.data >= @dataInicial AND venda.data < @dataFinal
+            ORDER BY venda.data, venda.cod_venda, produto.cod_produto;";
+            MySqlConnection conexao = BancoDeDados.conexao();
+            MySqlCommand comando = new MySqlCommand(sql, conexao);
+            comando.Parameters.AddWithValue("@dataInicial", dataInicial);
+            comando.Parameters.AddWithValue("@dataFinal", dataFinal);
+
+            MySqlDataReader cursor = comando.ExecuteReader();
+            List<Venda> listaDeVenda = new List<Venda>();
+
+
+            while (cursor.Read())
+            {
+                int cod_venda = cursor.GetInt32("cod_venda");
+                Venda? venda = listaDeVenda.Find(venda => venda.cod_venda == cod_venda);
+
+                if (venda == null)
+                {
+                    venda = new Venda
+                    {
+                        cod_venda = cursor.GetInt32("cod_venda"),
+                        cod_funcionario = cursor.GetInt32("cod_funcionario"),
+                        data = cursor.GetDateTime("data"),
+                        nomeFuncionario = cursor.GetString("nome_funcionario")
+                    };
+                    listaDeVenda.Add(venda);
+                }
+
+                if (!cursor.IsDBNull(cursor.GetOrdinal("cod_itens")))
+                {
+                    Item item = new Item 
+                    { 
+                        cod_itens = cursor.GetInt32("cod_itens"),
+                        cod_venda = cod_venda,
+                        cod_produto = cursor.GetInt32("cod_produto"),
+                        quantidade = cursor.GetInt32("quantidade"),
+                        preco = cursor.GetInt32("preco"),
+                        nomeProduto = cursor.GetString("nome"),
+                        marcaProduto = cursor.GetString("marca")
+                    };
+                    venda.itens.Add(item);
+                }
+            }
+            return listaDeVenda;
+           
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace ProjetoVenda
 
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmCadastroVenda());
-            //Relatorio relatorio = new Relatorio();
+            Relatorio relatorio = new Relatorio();
 
             //List<Item> itens = new List<Item>();
             //itens.Add(
@@ -32,11 +32,20 @@ namespace ProjetoVenda
 
             //    });
 
-               
+
             //var documento = relatorio.gerarNota(itens);
             //relatorio.salvarPdf(documento);
+            VendaControle vendaControle = new VendaControle();
+            List<Venda> lista = vendaControle.listarVendaMes(11, 2026);
+            var documento = relatorio.gerarRelatoioMensal(lista);
+            relatorio.salvarPdf(documento);
+           
 
-            while (true)
+
+
+
+
+            while (false)
             {
                 //using é utilizado de modo temporario, enxergue como se fosse um "IF".
                 using (frmLogin login = new frmLogin()) // criação da nossa instancia, da nossa variavel

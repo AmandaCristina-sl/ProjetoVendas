@@ -174,7 +174,7 @@ namespace ProjetoVenda.formulario
                 bool resposta = vendaControle.cadastrarVenda(this.carrinho);
                 if (resposta)
                 {
-                    carrinho.Clear();
+                    
                     frmCadastroVenda_Load(this, EventArgs.Empty);
                     MessageBox.Show("Venda Cadastrada com sucesso!!");
                     // mostrar o "Cupom de vendas"!!
